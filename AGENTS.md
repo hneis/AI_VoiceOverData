@@ -56,10 +56,12 @@ Run after every relevant change:
 luac -p Module.lua Hybrid.lua generated/*.lua
 python CheckAudio.py
 node --check tools/build_catquest_overlay.js
+node --check tools/build_octowow_quest_text_lookup.js
 node --check tools/check_catquest_update.js
 node --check tools/prune_english_fallback.js
 node --check tools/validate_package.js
 node tools/validate_package.js
+lua tests/quest_resolver.lua
 ```
 
 GitHub Actions are not included in version 1.0.0. Run this validation locally before every push until CI is enabled.

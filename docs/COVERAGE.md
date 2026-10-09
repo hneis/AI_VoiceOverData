@@ -57,3 +57,7 @@ Final CatQuest/RU/EN routing:
 - RU OctoMeow and the Octo database may be updated independently.
 - Russian baseline matching is not proof of the current live server text.
 - Real playback must be checked after a full client restart.
+
+## Repeated English Titles
+
+Octo contains 304 ambiguous quest titles covering 1 034 IDs. Version 1.0.3 adds 806 unique accept-text routes and blocks 74 indistinguishable compacted texts when the NPC name is unavailable. Exact NPC matches still take priority.

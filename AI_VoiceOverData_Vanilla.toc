@@ -1,6 +1,6 @@
 ## Interface: 11200
 ## Title: VoiceOver Data - Vanilla (EN UI, CatQuest/RU, EN fallback)
-## Version: 1.0.2
+## Version: 1.0.3
 ## LoadOnDemand: 1
 ## OptionalDeps: AI_VoiceOver_112, AI_VoiceOver
 ## X-Part-Of: VoiceOver
@@ -17,6 +17,8 @@ generated\gossip_file_lookups.lua
 generated\npc_name_gossip_file_lookups.lua
 generated\npc_name_lookups.lua
 generated\quest_id_lookups.lua
+generated\octo_quest_text_lookups.lua
+QuestIDResolver.lua
 generated\questlog_npc_lookups.lua
 generated\sound_length_table.lua
 generated\sound_length_table_ru.lua
