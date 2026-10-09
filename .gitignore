@@ -1,0 +1,7 @@
+*.zip
+*.rar
+audio_check.txt
+node_modules/
+sources/
+artifacts/
+.DS_Store
