@@ -124,7 +124,9 @@ function assertEqual(actual, expected, label) {
 
 function main() {
     const lock = JSON.parse(fs.readFileSync(path.join(root, "sources.lock.json"), "utf8"));
-    const toc = fs.readFileSync(path.join(root, "AI_VoiceOverData_Vanilla.toc"), "utf8");
+    const toc = fs.readFileSync(path.join(root, "AI_VoiceOverData.toc"), "utf8");
+    const legacyToc = fs.readFileSync(path.join(root, "AI_VoiceOverData_Vanilla.toc"), "utf8");
+    assertEqual(legacyToc, toc, "Legacy and GitAddonsManager TOCs");
     const en = lengthManifest(path.join(root, "generated", "sound_length_table.lua"));
     const ru = lengthManifest(path.join(root, "generated", "sound_length_table_ru.lua"));
     const installed = installedInventory(path.join(root, "generated", "installed_audio.lua"));

@@ -22,7 +22,7 @@ function isNewer(candidate, current) {
 
 async function main() {
     const addonRoot = path.resolve(__dirname, "..");
-    const toc = fs.readFileSync(path.join(addonRoot, "AI_VoiceOverData_Vanilla.toc"), "utf8");
+    const toc = fs.readFileSync(path.join(addonRoot, "AI_VoiceOverData.toc"), "utf8");
     const current = /^## X-CatQuest-Voices-Version:\s*(\S+)/m.exec(toc)?.[1];
     if (!current) throw new Error("Missing X-CatQuest-Voices-Version in TOC");
     const currentFileId = Number(/^## X-CatQuest-Curse-File-ID:\s*(\d+)/m.exec(toc)?.[1]);

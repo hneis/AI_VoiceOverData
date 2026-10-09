@@ -13,7 +13,7 @@ These instructions apply only to this addon repository.
 
 ## Repository Layout
 
-- Keep `AI_VoiceOverData_Vanilla.toc` at the repository root for GitAddonsManager.
+- Keep `AI_VoiceOverData.toc` at the repository root for GitAddonsManager. Keep `AI_VoiceOverData_Vanilla.toc` synchronized for legacy manual installations.
 - Keep one addon in this repository.
 - Do not use Git LFS; the Qt GitAddonsManager uses libgit2 without LFS support.
 - Commit runtime audio as ordinary Git blobs.

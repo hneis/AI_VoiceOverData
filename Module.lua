@@ -3,7 +3,7 @@ if not VoiceOver or not VoiceOver.DataModules then return end
 AI_VoiceOverData_Vanilla = {}
 local module = AI_VoiceOverData_Vanilla
 module.HybridBuild = "en-ui-catquest-ru-en-1.0.0"
-module.Version = "1.0.1"
+module.Version = "1.0.2"
 
 -- The player still resolves the EN quest/gossip key and player-gender variant.
 -- Hybrid.lua gives each key its own CatQuest/RU/EN audio path and matching duration.
@@ -12,4 +12,6 @@ function module:GetSoundPath(fileName, event)
     return self.SoundPathLookupByFileName and self.SoundPathLookupByFileName[fileName]
 end
 
-VoiceOver.DataModules:Register("AI_VoiceOverData_Vanilla", module)
+local moduleName = VoiceOver.DataModules:GetPresentModule("AI_VoiceOverData") and
+    "AI_VoiceOverData" or "AI_VoiceOverData_Vanilla"
+VoiceOver.DataModules:Register(moduleName, module)
