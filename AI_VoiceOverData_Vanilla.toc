@@ -1,6 +1,6 @@
-## Interface: 100000
+## Interface: 11200
 ## Title: VoiceOver Data - Vanilla (EN UI, CatQuest/RU, EN fallback)
-## Version: 1.0.0
+## Version: 1.0.1
 ## LoadOnDemand: 1
 ## OptionalDeps: AI_VoiceOver_112, AI_VoiceOver
 ## X-Part-Of: VoiceOver
