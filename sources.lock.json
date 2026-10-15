@@ -1,5 +1,5 @@
 {
-  "addonVersion": "1.1.0",
+  "addonVersion": "1.1.1",
   "catquest": {
     "version": "0.7.0",
     "curseForgeProjectId": 1715207,
@@ -19,7 +19,15 @@
     "selectedBytes": 428615131,
     "questIds": 1992,
     "sections": 3036,
-    "files": 3707
+    "files": 3707,
+    "questLookup": {
+      "selectedAccepts": 1828,
+      "reachableAccepts": 1736,
+      "blockedAccepts": 92,
+      "addedTitles": 417,
+      "addedDirect": 173,
+      "addedAmbiguous": 244
+    }
   },
   "baseInventory": {
     "ruRoutes": 8898,
@@ -44,6 +52,7 @@
     "generated/questlog_npc_lookups.lua": "e9c2f0357b777f89a0149ba35e248518751857b10a6347d53d0bd575e87e4c7b",
     "generated/sound_length_table.lua": "0c84a2b71f83cebfdfe7b00c0e4b449244936a221b56f19f4e39456cdaeb830c",
     "generated/sound_length_table_ru.lua": "2a67ecce178bb9ba8bcc8d0d245788bad49157342c4303b737ba297a032d1172",
-    "generated/octo_quest_text_lookups.lua": "7ab97adf5d386c2305670ca05cd19e82ece8a1fe022a741e94d0cbbfdda09bc9"
+    "generated/octo_quest_text_lookups.lua": "db5716c5b44ea9225389829b20964a1f2098b98fda0c9ca3513ebe059fe28a8e",
+    "generated/catquest_quest_id_lookups.lua": "8e7ec6165368fc6a4ec5a19ccdf0494321a56f7785c8754eaf5a7066852b8fc6"
   }
 }

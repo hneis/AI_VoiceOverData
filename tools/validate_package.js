@@ -3,6 +3,7 @@
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
+const { dataTable } = require("./lib/catquest");
 
 const root = path.resolve(__dirname, "..");
 const questKey = /^(?:[mf]-)?\d+-(?:accept|progress|complete)$/;
@@ -146,6 +147,10 @@ function spacedNumber(value) {
     return String(value).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
 
+function numericKeys(value) {
+    return new Set(Object.keys(value || {}).filter(key => /^\d+$/.test(key)).map(Number));
+}
+
 function main() {
     const lock = JSON.parse(fs.readFileSync(path.join(root, "sources.lock.json"), "utf8"));
     const packageMetadata = JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8"));
@@ -162,8 +167,16 @@ function main() {
     const ru = lengthManifest(path.join(root, "generated", "sound_length_table_ru.lua"));
     const installed = installedInventory(path.join(root, "generated", "installed_audio.lua"));
     const catquest = catquestData(path.join(root, "generated", "catquest_audio.lua"));
+    const baseQuestLookup = dataTable(path.join(root, "generated", "quest_id_lookups.lua"),
+        "AI_VoiceOverData_Vanilla.QuestIDLookup");
+    const catquestQuestLookup = dataTable(path.join(root, "generated", "catquest_quest_id_lookups.lua"),
+        "AI_VoiceOverData_Vanilla.CatQuestQuestLookup");
+    const octoTextLookup = dataTable(path.join(root, "generated", "octo_quest_text_lookups.lua"),
+        "AI_VoiceOverData_Vanilla.OctoQuestTextLookup");
     const catChecksums = checksumManifest(path.join(root, "generated", "catquest_files.sha256"));
     assertEqual(catquest.schema, 1, "CatQuest schema version");
+    assertEqual(catquestQuestLookup.SchemaVersion, 1, "CatQuest quest lookup schema version");
+    assertEqual(octoTextLookup.SchemaVersion, 1, "Octo text lookup schema version");
     assertEqual(lock.catquest.curseForgeProjectId, 1715207, "CatQuest project ID");
     assertEqual(sha256(fs.readFileSync(path.join(root, "generated", "catquest_audio.lua"))),
         lock.catquest.generatedDataSha256, "Generated CatQuest data hash");
@@ -193,6 +206,55 @@ function main() {
     assertEqual(catquest.counts.sections, lock.catquest.sections, "CatQuest section count");
     assertEqual(catquest.entries.size, lock.catquest.files, "CatQuest file count");
     assertEqual(catChecksums.size, lock.catquest.files, "CatQuest checksum count");
+    assertEqual(catquestQuestLookup.SourceRevision, lock.catquest.octoQuestDatabaseRevision,
+        "CatQuest quest lookup source revision");
+    assertEqual(octoTextLookup.SourceRevision, lock.catquest.octoQuestDatabaseRevision,
+        "Octo text lookup source revision");
+
+    const selectedAcceptIDs = new Set();
+    for (const key of catquest.entries.keys()) {
+        const match = /^(?:[mf]-)?(\d+)-accept$/.exec(key);
+        if (match) selectedAcceptIDs.add(Number(match[1]));
+    }
+    const selectedTitleIDs = numericKeys(catquestQuestLookup.SelectedTitles);
+    const reachableIDs = numericKeys(catquestQuestLookup.ReachableIDs);
+    const blockedIDs = numericKeys(catquestQuestLookup.BlockedIDs);
+    assertEqual(selectedTitleIDs.size, selectedAcceptIDs.size, "CatQuest selected title count");
+    assertEqual(selectedTitleIDs.size, catquestQuestLookup.SelectedAcceptCount, "CatQuest lookup selected count");
+    assertEqual(reachableIDs.size, catquestQuestLookup.ReachableAcceptCount, "CatQuest reachable accept count");
+    assertEqual(blockedIDs.size, catquestQuestLookup.BlockedAcceptCount, "CatQuest blocked accept count");
+    assertEqual(reachableIDs.size + blockedIDs.size, selectedAcceptIDs.size, "CatQuest reachability partition");
+    assertEqual(selectedAcceptIDs.size, lock.catquest.questLookup.selectedAccepts, "Locked CatQuest selected accepts");
+    assertEqual(reachableIDs.size, lock.catquest.questLookup.reachableAccepts, "Locked CatQuest reachable accepts");
+    assertEqual(blockedIDs.size, lock.catquest.questLookup.blockedAccepts, "Locked CatQuest blocked accepts");
+    assertEqual(catquestQuestLookup.AddedTitleCount, lock.catquest.questLookup.addedTitles, "Locked added title routes");
+    assertEqual(catquestQuestLookup.AddedDirectCount, lock.catquest.questLookup.addedDirect, "Locked direct title routes");
+    assertEqual(catquestQuestLookup.AddedAmbiguousCount, lock.catquest.questLookup.addedAmbiguous,
+        "Locked ambiguous title routes");
+    for (const id of selectedAcceptIDs) {
+        if (!selectedTitleIDs.has(id)) throw new Error(`Missing selected CatQuest title: ${id}`);
+        if (reachableIDs.has(id) === blockedIDs.has(id)) throw new Error(`Invalid CatQuest reachability state: ${id}`);
+        const title = catquestQuestLookup.SelectedTitles[id];
+        const baseRoute = baseQuestLookup.accept && baseQuestLookup.accept[title];
+        const route = Object.prototype.hasOwnProperty.call(catquestQuestLookup.Routes, title)
+            ? catquestQuestLookup.Routes[title] : baseRoute;
+        let reachable = false;
+        if (typeof route === "number") {
+            if (route !== id) throw new Error(`CatQuest title resolves to another quest: ${title} -> ${route}/${id}`);
+            reachable = true;
+        } else if (route && typeof route === "object") {
+            if (Object.prototype.hasOwnProperty.call(catquestQuestLookup.Routes, title)
+                && Object.keys(route).length !== 0) {
+                throw new Error(`CatQuest ambiguous override retained legacy routes: ${title}`);
+            }
+            reachable = Object.values(octoTextLookup.Routes && octoTextLookup.Routes[title] || {}).includes(id);
+        } else {
+            throw new Error(`Missing CatQuest title route: ${id} / ${title}`);
+        }
+        if (reachable !== reachableIDs.has(id)) throw new Error(`CatQuest reachability metadata mismatch: ${id}`);
+    }
+    assertEqual(catquestQuestLookup.Routes["Ledger from Tanaris"], 4450, "Ledger from Tanaris journal route");
+    assertEqual(catquestQuestLookup.Routes["Trinkets..."], 3481, "Trinkets journal route");
     assertEqual(installed.en.size, lock.baseInventory.enFiles, "EN inventory files");
     assertEqual(installed.ru.size, lock.baseInventory.ruFiles, "RU inventory files");
     actualAudio("en", installed.en);
@@ -287,6 +349,12 @@ function main() {
     const result = {
         addonVersion: lock.addonVersion,
         catquest: { version: catquest.version, ...catquest.counts },
+        questLookup: {
+            selectedAccepts: selectedAcceptIDs.size,
+            reachableAccepts: reachableIDs.size,
+            blockedAccepts: blockedIDs.size,
+            addedTitles: catquestQuestLookup.AddedTitleCount,
+        },
         inventory: { en: installed.en.size, ru: installed.ru.size, catquest: actualCat.size },
         routes,
     };

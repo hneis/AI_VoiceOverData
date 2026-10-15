@@ -64,4 +64,6 @@ Final CatQuest/RU/EN routing:
 
 ## Repeated English Titles
 
-Octo contains 304 ambiguous quest titles covering 1 034 IDs. Version 1.0.3 adds 806 unique accept-text routes and blocks 74 indistinguishable compacted texts when the NPC name is unavailable. Exact NPC matches still take priority.
+The current Octo text resolver contains 406 ambiguous titles, 937 unique accept-text routes and 92 indistinguishable compacted texts that are safely blocked when the NPC name is unavailable. Exact NPC matches still take priority.
+
+Version 1.1.1 overlays 417 title routes required by selected CatQuest accepts: 173 unique titles map directly to an ID and 244 ambiguous titles replace legacy NPC mappings and use the current text resolver. Of 1 828 selected CatQuest accept IDs, 1 736 are safely reachable from the Vanilla quest log and 92 remain blocked because neither title nor text distinguishes them reliably.
