@@ -6,6 +6,22 @@ const crypto = require("crypto");
 
 const root = path.resolve(__dirname, "..");
 const questKey = /^(?:[mf]-)?\d+-(?:accept|progress|complete)$/;
+const oggCRCTable = Array.from({ length: 256 }, (_, value) => {
+    let checksum = value << 24;
+    for (let bit = 0; bit < 8; bit++) {
+        checksum = checksum & 0x80000000 ? (checksum << 1) ^ 0x04c11db7 : checksum << 1;
+    }
+    return checksum >>> 0;
+});
+
+function oggPageCRC(buffer, start, end) {
+    let checksum = 0;
+    for (let offset = start; offset < end; offset++) {
+        const byte = offset >= start + 22 && offset < start + 26 ? 0 : buffer[offset];
+        checksum = ((checksum << 8) ^ oggCRCTable[((checksum >>> 24) ^ byte) & 0xff]) >>> 0;
+    }
+    return checksum;
+}
 
 function lengthManifest(file) {
     const source = fs.readFileSync(file, "utf8");
@@ -32,6 +48,7 @@ function installedInventory(file) {
 
 function catquestData(file) {
     const source = fs.readFileSync(file, "utf8");
+    const schema = Number(/SchemaVersion = (\d+)/.exec(source)?.[1]);
     const version = /SourceVersion = "([^"]+)"/.exec(source)?.[1];
     const coverageSha256 = /CoverageSha256 = "([0-9a-f]{64})"/.exec(source)?.[1];
     const audioManifestSha256 = /AudioManifestSha256 = "([0-9a-f]{64})"/.exec(source)?.[1];
@@ -59,7 +76,7 @@ function catquestData(file) {
     if (entries.size !== counts.files) throw new Error(`CatQuest entry count mismatch: ${entries.size}/${counts.files}`);
     if (questIDs.size !== counts.quests) throw new Error(`CatQuest quest count mismatch: ${questIDs.size}/${counts.quests}`);
     if (sections.size !== counts.sections) throw new Error(`CatQuest section count mismatch: ${sections.size}/${counts.sections}`);
-    return { source, version, coverageSha256, audioManifestSha256, counts, entries };
+    return { source, schema, version, coverageSha256, audioManifestSha256, counts, entries };
 }
 
 function sha256(buffer) {
@@ -77,6 +94,9 @@ function oggDuration(buffer) {
         let size = 0;
         for (let i = offset + 27; i < packet; i++) size += buffer[i];
         if (packet + size > buffer.length) throw new Error("Truncated OGG data");
+        if (oggPageCRC(buffer, offset, packet + size) !== buffer.readUInt32LE(offset + 22)) {
+            throw new Error("Invalid OGG page CRC");
+        }
         const currentSerial = buffer.readUInt32LE(offset + 14);
         if (serial === undefined) {
             serial = currentSerial;
@@ -122,22 +142,47 @@ function assertEqual(actual, expected, label) {
     if (actual !== expected) throw new Error(`${label}: expected ${expected}, got ${actual}`);
 }
 
+function spacedNumber(value) {
+    return String(value).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
+
 function main() {
     const lock = JSON.parse(fs.readFileSync(path.join(root, "sources.lock.json"), "utf8"));
+    const packageMetadata = JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8"));
+    const packageLock = JSON.parse(fs.readFileSync(path.join(root, "package-lock.json"), "utf8"));
     const toc = fs.readFileSync(path.join(root, "AI_VoiceOverData.toc"), "utf8");
     const legacyToc = fs.readFileSync(path.join(root, "AI_VoiceOverData_Vanilla.toc"), "utf8");
     assertEqual(legacyToc, toc, "Legacy and GitAddonsManager TOCs");
+    for (const line of toc.split(/\r?\n/)) {
+        if (!line || line.startsWith("##")) continue;
+        const location = path.join(root, line.replace(/\\/g, path.sep));
+        if (!fs.existsSync(location)) throw new Error(`Missing TOC path with matching case: ${line}`);
+    }
     const en = lengthManifest(path.join(root, "generated", "sound_length_table.lua"));
     const ru = lengthManifest(path.join(root, "generated", "sound_length_table_ru.lua"));
     const installed = installedInventory(path.join(root, "generated", "installed_audio.lua"));
     const catquest = catquestData(path.join(root, "generated", "catquest_audio.lua"));
     const catChecksums = checksumManifest(path.join(root, "generated", "catquest_files.sha256"));
+    assertEqual(catquest.schema, 1, "CatQuest schema version");
+    assertEqual(lock.catquest.curseForgeProjectId, 1715207, "CatQuest project ID");
     assertEqual(sha256(fs.readFileSync(path.join(root, "generated", "catquest_audio.lua"))),
         lock.catquest.generatedDataSha256, "Generated CatQuest data hash");
     assertEqual(sha256(fs.readFileSync(path.join(root, "generated", "catquest_files.sha256"))),
         lock.catquest.generatedChecksumsSha256, "Generated CatQuest checksums hash");
 
     assertEqual(metadata(toc, "Version"), lock.addonVersion, "Addon version");
+    assertEqual(packageMetadata.version, lock.addonVersion, "Tool package version");
+    assertEqual(packageLock.version, packageMetadata.version, "Package lock version");
+    assertEqual(packageLock.packages[""].version, packageMetadata.version, "Root package lock version");
+    const moduleSource = fs.readFileSync(path.join(root, "Module.lua"), "utf8");
+    assertEqual(/module\.Version = "([^"]+)"/.exec(moduleSource)?.[1], lock.addonVersion, "Lua module version");
+    assertEqual(/module\.HybridBuild = "en-ui-catquest-ru-en-([^"]+)"/.exec(moduleSource)?.[1],
+        lock.addonVersion, "Hybrid build version");
+    const readme = fs.readFileSync(path.join(root, "README.md"), "utf8");
+    assertEqual(/\*\*Version:\*\*\s*(\S+)/.exec(readme)?.[1], lock.addonVersion, "README version");
+    for (const value of [lock.catquest.questIds, lock.catquest.sections, lock.catquest.files]) {
+        if (!readme.includes(spacedNumber(value))) throw new Error(`README is missing CatQuest count: ${value}`);
+    }
     assertEqual(metadata(toc, "X-CatQuest-Voices-Version"), lock.catquest.version, "CatQuest TOC version");
     assertEqual(metadata(toc, "X-CatQuest-Curse-File-ID"), String(lock.catquest.curseForgeFileId), "CatQuest file ID");
     assertEqual(metadata(toc, "X-CatQuest-Archive-SHA256"), lock.catquest.archiveSha256, "CatQuest archive hash");
@@ -154,14 +199,57 @@ function main() {
     actualAudio("ru", installed.ru);
 
     const catDirectory = path.join(root, "generated", "sounds", "catquest", "quests");
-    const actualCat = new Set(fs.readdirSync(catDirectory).filter(file => file.endsWith(".ogg")));
+    const catFiles = fs.readdirSync(catDirectory);
+    const unexpectedCat = catFiles.find(file => !/^[a-z0-9_]+\.ogg$/.test(file));
+    if (unexpectedCat) throw new Error(`Unexpected CatQuest audio file: ${unexpectedCat}`);
+    const actualCat = new Set(catFiles);
     assertEqual(actualCat.size, catquest.entries.size, "CatQuest directory file count");
+    let selectedBytes = 0;
     for (const entry of catquest.entries.values()) {
         const file = path.join(catDirectory, entry.file);
         if (!actualCat.has(entry.file) || fs.statSync(file).size <= 0) throw new Error(`Missing CatQuest audio: ${entry.file}`);
         const buffer = fs.readFileSync(file);
+        selectedBytes += buffer.length;
         if (sha256(buffer) !== catChecksums.get(entry.file)) throw new Error(`CatQuest hash mismatch: ${entry.file}`);
         if (oggDuration(buffer) !== entry.duration) throw new Error(`CatQuest duration mismatch: ${entry.file}`);
+    }
+    assertEqual(selectedBytes, lock.catquest.selectedBytes, "CatQuest selected byte count");
+    if (!Number.isInteger(lock.catquest.upstreamFiles) || lock.catquest.upstreamFiles < lock.catquest.files) {
+        throw new Error("Invalid CatQuest upstream file count");
+    }
+    if (lock.catquest.auditMode !== "prior-sections-only-with-octo-overrides-excluded") {
+        throw new Error(`Unexpected CatQuest audit mode: ${lock.catquest.auditMode}`);
+    }
+    for (const field of ["previousCoverageSha256", "classicRuSha256", "referenceManifestSha256"]) {
+        if (!/^[0-9a-f]{64}$/.test(lock.catquest[field] || "")) throw new Error(`Invalid CatQuest ${field}`);
+    }
+    for (const field of ["octoQuestDatabaseRevision", "classicRuRevision"]) {
+        if (!/^[0-9a-f]{40}$/.test(lock.catquest[field] || "")) throw new Error(`Invalid CatQuest ${field}`);
+    }
+    for (const file of catChecksums.keys()) {
+        if (!actualCat.has(file)) throw new Error(`Checksum references absent CatQuest audio: ${file}`);
+    }
+
+    const importDocumentation = fs.readFileSync(path.join(root, "docs", "CATQUEST_IMPORT.md"), "utf8");
+    const coverageDocumentation = fs.readFileSync(path.join(root, "docs", "COVERAGE.md"), "utf8");
+    const notice = fs.readFileSync(path.join(root, "NOTICE.md"), "utf8");
+    const audioLicense = fs.readFileSync(path.join(root, "LICENSE-CATQUEST-AUDIO.md"), "utf8");
+    for (const [label, source] of [["CatQuest import documentation", importDocumentation], ["NOTICE", notice]]) {
+        if (!source.includes(lock.catquest.version) || !source.includes(String(lock.catquest.curseForgeFileId))
+            || !source.includes(lock.catquest.archiveSha256)) {
+            throw new Error(`${label} is not synchronized with sources.lock.json`);
+        }
+    }
+    for (const value of Object.values(lock.finalRouting)) {
+        if (!coverageDocumentation.includes(spacedNumber(value))) {
+            throw new Error(`Coverage documentation is missing routing count: ${value}`);
+        }
+    }
+    if (!notice.includes("CC BY-NC-SA 4.0") || !audioLicense.includes(lock.catquest.version)
+        || !audioLicense.includes(String(lock.catquest.curseForgeFileId))
+        || !audioLicense.includes(lock.catquest.archiveSha256)
+        || !audioLicense.includes("creativecommons.org/licenses/by-nc-sa/4.0")) {
+        throw new Error("Missing or stale CatQuest audio license attribution");
     }
 
     for (const [file, expected] of Object.entries(lock.authoritativeTables)) {

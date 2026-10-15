@@ -1,15 +1,15 @@
 ## Interface: 11200
 ## Title: VoiceOver Data - Vanilla (EN UI, CatQuest/RU, EN fallback)
-## Version: 1.0.3
+## Version: 1.1.0
 ## LoadOnDemand: 1
 ## OptionalDeps: AI_VoiceOver_112, AI_VoiceOver
 ## X-Part-Of: VoiceOver
 ## X-Child-Of: VoiceOver
 ## X-VoiceOver-DataModule-Version: 1
 ## X-VoiceOver-DataModule-Priority: 100
-## X-CatQuest-Voices-Version: 0.5.0
-## X-CatQuest-Curse-File-ID: 9108577
-## X-CatQuest-Archive-SHA256: 2f91d17ad1a2482bf885672b91459495540f0c5a26b3b032eae004114895de5a
+## X-CatQuest-Voices-Version: 0.7.0
+## X-CatQuest-Curse-File-ID: 9152956
+## X-CatQuest-Archive-SHA256: 4f52c422fb5a0a90050c1ec9e70f2e0a3267fdf87c065b6053fde8ad33d69680
 ## X-VoiceOver-DataModule-Maps: 0, 1, 30, 33, 43, 47, 48, 70, 90, 109, 129, 189, 209, 229, 230, 289, 309, 329, 349, 369, 389, 429, 469, 509, 531, 533
 
 Module.lua

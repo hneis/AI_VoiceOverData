@@ -1,0 +1,50 @@
+name: Validate package
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths-ignore:
+      - "docs/candidates/**"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Check out package
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install validation tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lua5.1
+          npm ci
+
+      - name: Check JavaScript syntax and tests
+        run: |
+          for file in tools/*.js tools/lib/*.js tests/*.js; do node --check "$file"; done
+          npm test
+
+      - name: Check Lua syntax and resolver behavior
+        run: |
+          luac5.1 -p Module.lua Hybrid.lua QuestIDResolver.lua generated/*.lua
+          lua5.1 tests/quest_resolver.lua
+
+      - name: Validate installed audio inventory
+        run: |
+          python3 CheckAudio.py
+          git diff --exit-code -- generated/installed_audio.lua
+
+      - name: Validate complete package
+        run: npm run validate

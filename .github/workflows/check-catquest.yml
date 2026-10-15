@@ -1,0 +1,78 @@
+name: Check CatQuest update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */12 * * *"
+
+concurrency:
+  group: catquest-update-detection
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out metadata only
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            AI_VoiceOverData.toc
+            AI_VoiceOverData_Vanilla.toc
+            sources.lock.json
+            tools/check_catquest_update.js
+
+      - name: Check upstream version
+        id: catquest
+        run: node tools/check_catquest_update.js
+
+      - name: Open draft audit pull request
+        if: steps.catquest.outputs.update == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.catquest.outputs.latest }}
+          FILE_ID: ${{ steps.catquest.outputs.fileId }}
+          FILE_NAME: ${{ steps.catquest.outputs.fileName }}
+          FILE_SIZE: ${{ steps.catquest.outputs.fileSize }}
+          FILE_PAGE: ${{ steps.catquest.outputs.filePage }}
+          UPLOADED_AT: ${{ steps.catquest.outputs.uploadedAt }}
+        run: |
+          set -euo pipefail
+          branch="automation/catquest-audit-${FILE_ID}"
+          existing="$(gh pr list --state all --head "$branch" --json number --jq '.[0].number // empty')"
+          if [ -n "$existing" ]; then
+            echo "Pull request #$existing already records file $FILE_ID"
+            exit 0
+          fi
+
+          git switch -c "$branch"
+          mkdir -p docs/candidates
+          cat > "docs/candidates/catquest-${FILE_ID}.md" <<EOF
+          # CatQuest Voices ${VERSION} audit candidate
+
+          - CurseForge file ID: \`${FILE_ID}\`
+          - Archive: \`${FILE_NAME}\`
+          - Reported size: \`${FILE_SIZE}\` bytes
+          - Uploaded: \`${UPLOADED_AT}\`
+          - Source: ${FILE_PAGE}
+
+          This draft records an upstream candidate only. It must not be merged until the archive,
+          transcripts, all referenced OGG files, compatibility selection, attribution, package hashes,
+          and OctoWoW playback have passed the procedure in \`docs/CATQUEST_IMPORT.md\`.
+
+          Remove this candidate file when the audited package update is added to this branch.
+          EOF
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "docs/candidates/catquest-${FILE_ID}.md"
+          git commit -m "Track CatQuest ${VERSION} audit candidate"
+          git push --set-upstream origin "$branch"
+          gh pr create --draft \
+            --title "Audit CatQuest Voices ${VERSION}" \
+            --body "Upstream CatQuest Voices file ${FILE_ID} requires a local compatibility and audio audit. This PR is a notification and audit branch, not a publishable update."

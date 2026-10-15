@@ -28,13 +28,13 @@ Selected recordings come from **CatQuest Voices** by Cathey (daniilcathey):
 - https://www.curseforge.com/wow/addons/catquest-voices
 - https://t.me/catheyco
 
-Imported source for version 1.0.0:
+Imported source for version 1.1.0:
 
-- CatQuest Voices: `0.5.0`
-- CurseForge file ID: `9108577`
-- archive SHA-256: `2f91d17ad1a2482bf885672b91459495540f0c5a26b3b032eae004114895de5a`
+- CatQuest Voices: `0.7.0`
+- CurseForge file ID: `9152956`
+- archive SHA-256: `4f52c422fb5a0a90050c1ec9e70f2e0a3267fdf87c065b6053fde8ad33d69680`
 
-The upstream project describes the speech as generated with a Russian F5-TTS fine-tune under CC BY-NC 4.0. CatQuest recordings are kept as a separately attributed, noncommercial audio set and are limited to recordings selected for Octo compatibility. The upstream project does not publish a separate repository-level license for the voice pack. This mirror is published noncommercially with attribution at the repository owner's direction; CatQuest material will be removed promptly if requested by its rights holder. World of Warcraft text, names and other game content remain the property of Blizzard Entertainment.
+The upstream project describes the 0.7.0 speech as synthesized with ElevenLabs Eleven v4 and distributed under CC BY-NC-SA 4.0. The selected CatQuest recordings and their directly derived inventory remain a separately attributed, noncommercial component under those terms; see [`LICENSE-CATQUEST-AUDIO.md`](LICENSE-CATQUEST-AUDIO.md). This repository redistributes a modified subset selected for Octo compatibility and does not imply endorsement by CatQuest, ElevenLabs or Blizzard Entertainment. CatQuest material will be removed promptly if requested by its rights holder. World of Warcraft text, names and other game content remain the property of Blizzard Entertainment.
 
 ## Coverage Data
 

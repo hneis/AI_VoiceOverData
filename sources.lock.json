@@ -1,17 +1,25 @@
 {
-  "addonVersion": "1.0.3",
+  "addonVersion": "1.1.0",
   "catquest": {
-    "version": "0.5.0",
+    "version": "0.7.0",
     "curseForgeProjectId": 1715207,
-    "curseForgeFileId": 9108577,
-    "archiveSha256": "2f91d17ad1a2482bf885672b91459495540f0c5a26b3b032eae004114895de5a",
-    "coverageSha256": "671ff29f1025e78057634be1824e5780ef5603f887844b91fe9ba4b60de441b3",
-    "audioManifestSha256": "ed0693e47f64cc9d76f794ed262f24ea37950fe01ed962ae236bc7ede917a061",
-    "generatedDataSha256": "2bbdb17d6ccfe8539d4dac75f7e0ad2edc3c9ce093800015ff948fec1003f72e",
-    "generatedChecksumsSha256": "0c4104a8a0276c6677776206ac47c433a36a96bf4706fd4ab6918a566eff8010",
-    "questIds": 2040,
-    "sections": 3140,
-    "files": 3806
+    "curseForgeFileId": 9152956,
+    "archiveSha256": "4f52c422fb5a0a90050c1ec9e70f2e0a3267fdf87c065b6053fde8ad33d69680",
+    "coverageSha256": "dbac247671ed6b13e6bb43d31ebaf6f0af3e97267a273fb85d5a3026539516e8",
+    "audioManifestSha256": "db83a3d00c029bcce0b8237d31b49cae7cd38bd15614a6ba2e861e0b4fd03b51",
+    "generatedDataSha256": "838ac9504bed12b0d63399e09543d3557d4f402483191a80fabd0e8f8c0773fd",
+    "generatedChecksumsSha256": "c44e00c277dda620aeefa7a69e172b83867c3fcd67ae6c7895a9b3f2144a6ddf",
+    "auditMode": "prior-sections-only-with-octo-overrides-excluded",
+    "previousCoverageSha256": "671ff29f1025e78057634be1824e5780ef5603f887844b91fe9ba4b60de441b3",
+    "octoQuestDatabaseRevision": "da341873737e0b11079ccadb90a40e82514d6367",
+    "classicRuRevision": "93f8aabbde2a7328a1f27f86539393471ed32b6c",
+    "classicRuSha256": "0c0b2e4a3a7edf1e37a4658a4758fb76537905ac2c05ce96b26373d50a655f22",
+    "referenceManifestSha256": "84a7ca12459c5e86d2b8a1c75fc74ca81cf4d552e0a54d465ed7243fce32581e",
+    "upstreamFiles": 11974,
+    "selectedBytes": 428615131,
+    "questIds": 1992,
+    "sections": 3036,
+    "files": 3707
   },
   "baseInventory": {
     "ruRoutes": 8898,
@@ -22,10 +30,10 @@
     "enFiles": 657
   },
   "finalRouting": {
-    "catquest": 3826,
-    "ru": 6787,
+    "catquest": 3723,
+    "ru": 6879,
     "en": 632,
-    "aliases": 22,
+    "aliases": 18,
     "missing": 0
   },
   "authoritativeTables": {
