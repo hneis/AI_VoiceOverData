@@ -76,6 +76,20 @@ node tools/build_catquest_overlay.js \
 
 It verifies every selected file, removes stale CatQuest OGG files, copies only the whitelist, and writes `generated/catquest_audio.lua`.
 
+After installing the overlay, regenerate the quest-log title routes from the same pinned Octo revision:
+
+```bash
+node tools/build_octowow_quest_text_lookup.js \
+  /path/to/OctoQuestDatabase/source/locales.json \
+  generated/quest_id_lookups.lua \
+  generated/catquest_audio.lua \
+  generated/octo_quest_text_lookups.lua \
+  generated/catquest_quest_id_lookups.lua \
+  <octo-revision>
+```
+
+`catquest:prepare --install` runs this step automatically. Unique titles receive direct IDs. Ambiguous titles are resolved from quest text, and indistinguishable records remain disabled instead of selecting another quest.
+
 ## Upstream Update Procedure
 
 1. Detect a new CatQuest Voices file on CurseForge.

@@ -21,12 +21,19 @@ VoiceOver.DataModules = {
 
 dofile("Module.lua")
 dofile("generated/quest_id_lookups.lua")
+dofile("generated/catquest_quest_id_lookups.lua")
 dofile("generated/octo_quest_text_lookups.lua")
 dofile("QuestIDResolver.lua")
 
 local module = AI_VoiceOverData_Vanilla
 local resolver = VoiceOver.DataModules
 local routes = module.OctoQuestTextLookup.Routes
+local catquestLookup = module.CatQuestQuestLookup
+
+assert(resolver:GetQuestID("accept", "Ledger from Tanaris", "", "") == 4450,
+    "Ledger from Tanaris is not reachable from the quest log")
+assert(resolver:GetQuestID("accept", "Trinkets...", "", "") == 3481,
+    "Trinkets is not reachable from the quest log")
 
 local function textFor(title, id)
     for text, value in pairs(routes[title]) do
@@ -34,6 +41,44 @@ local function textFor(title, id)
     end
     error("Missing generated route for " .. title .. " / " .. tostring(id))
 end
+
+local selectedAccepts, reachableAccepts, blockedAccepts = 0, 0, 0
+for id, title in pairs(catquestLookup.SelectedTitles) do
+    selectedAccepts = selectedAccepts + 1
+    if catquestLookup.ReachableIDs[id] then
+        reachableAccepts = reachableAccepts + 1
+        local titleLookup = module.QuestIDLookup.accept[title]
+        if type(titleLookup) == "number" then
+            assert(titleLookup == id, "Direct CatQuest title route points to another ID")
+            assert(resolver:GetQuestID("accept", title, "", "") == id,
+                "Direct CatQuest runtime route failed for " .. title .. " / " .. tostring(id))
+        else
+            assert(type(titleLookup) == "table", "Missing CatQuest title route for " .. tostring(id))
+            local text = textFor(title, id)
+            assert(resolver:GetQuestID("accept", title, "", text) == id,
+                "CatQuest text route failed for " .. title .. " / " .. tostring(id))
+        end
+    elseif catquestLookup.BlockedIDs[id] then
+        blockedAccepts = blockedAccepts + 1
+        local titleLookup = module.QuestIDLookup.accept[title]
+        assert(type(titleLookup) == "table" and next(titleLookup) == nil,
+            "Blocked CatQuest title retained unsafe legacy NPC routes: " .. title)
+        local blockedText = nil
+        for text, routeID in pairs(routes[title] or {}) do
+            if routeID == 0 then blockedText = text break end
+        end
+        assert(blockedText ~= nil, "Blocked CatQuest title has no blocked text: " .. title)
+        assert(resolver:GetQuestID("accept", title, "Any NPC", blockedText) == 0,
+            "Blocked CatQuest route selected another quest: " .. title)
+    else
+        error("Selected CatQuest accept has no reachability state: " .. tostring(id))
+    end
+end
+assert(selectedAccepts == catquestLookup.SelectedAcceptCount, tostring(selectedAccepts))
+assert(reachableAccepts == catquestLookup.ReachableAcceptCount, tostring(reachableAccepts))
+assert(blockedAccepts == catquestLookup.BlockedAcceptCount, tostring(blockedAccepts))
+assert(resolver:GetQuestID("accept", "Wanted:  \"Hogger\"", "", "") == 176,
+    "Quoted quest title normalization regressed")
 
 local reported = {
     { "Farren's Proof", 559, "Lieutenant Farren Orinelle",
@@ -69,8 +114,8 @@ end
 
 assert(unique == module.OctoQuestTextLookup.RouteCount, tostring(unique))
 assert(blocked == module.OctoQuestTextLookup.BlockedCount, tostring(blocked))
-assert(unique == 806, tostring(unique))
-assert(blocked == 74, tostring(blocked))
+assert(unique == 937, tostring(unique))
+assert(blocked == 92, tostring(blocked))
 
 modules = {
     {
@@ -113,4 +158,5 @@ modules = { module }
 assert(resolver:GetQuestID("complete", "Farren's Proof", "Marshal Redpath", "irrelevant") == 560,
     "Complete-stage exact NPC route regressed")
 
-print(string.format("quest resolver passed: %d unique routes, %d blocked texts", unique, blocked))
+print(string.format("quest resolver passed: %d unique text routes, %d blocked texts, %d/%d reachable CatQuest accepts",
+    unique, blocked, reachableAccepts, selectedAccepts))

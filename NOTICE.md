@@ -28,7 +28,7 @@ Selected recordings come from **CatQuest Voices** by Cathey (daniilcathey):
 - https://www.curseforge.com/wow/addons/catquest-voices
 - https://t.me/catheyco
 
-Imported source for version 1.1.0:
+Imported source for version 1.1.1:
 
 - CatQuest Voices: `0.7.0`
 - CurseForge file ID: `9152956`

@@ -194,7 +194,7 @@ async function main() {
     if (!args["classic-repository"]) {
         ensureRepository("https://github.com/WoWruRU/classicdb_ruRU.git", classicRepository, args["classic-revision"]);
     }
-    validateRepository(octo, args["octo-revision"], "OctoQuestDatabase");
+    const octoRevision = validateRepository(octo, args["octo-revision"], "OctoQuestDatabase");
     validateRepository(classicRepository, args["classic-revision"], "classicdb_ruRU");
     const classicRu = path.resolve(args["classic-ru"]
         || path.join(classicRepository, "Full_DB", "ClassicDB_ruRU_1_0_2.sql"));
@@ -228,6 +228,15 @@ async function main() {
             path.join(artifacts, "catquest-sections.csv"),
             path.join(artifacts, "forever-audio-manifest.json"),
             path.join(catquest, "Sounds", "q"),
+        ]);
+        run(process.execPath, [
+            path.join(addonRoot, "tools", "build_octowow_quest_text_lookup.js"),
+            path.join(octo, "source", "locales.json"),
+            path.join(addonRoot, "generated", "quest_id_lookups.lua"),
+            path.join(addonRoot, "generated", "catquest_audio.lua"),
+            path.join(addonRoot, "generated", "octo_quest_text_lookups.lua"),
+            path.join(addonRoot, "generated", "catquest_quest_id_lookups.lua"),
+            octoRevision,
         ]);
     }
     const result = {

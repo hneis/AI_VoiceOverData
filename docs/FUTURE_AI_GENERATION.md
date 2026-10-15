@@ -1,6 +1,6 @@
 # Future AI Generation For Missing Octo Voiceovers
 
-This is a future phase. Version 1.0.0 imports compatible official CatQuest audio only.
+This is a future phase. The current package imports compatible official CatQuest audio only.
 
 ## Scope Rule
 

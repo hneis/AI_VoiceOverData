@@ -29,6 +29,8 @@ These instructions apply only to this addon repository.
 - Exclude `close`, `different`, `missing` and unresolved class/race templates.
 - Record the upstream CatQuest version, file ID and archive SHA-256.
 - Copy only files selected by the generated whitelist.
+- Regenerate CatQuest quest-log title routes from the same pinned Octo revision after every overlay rebuild.
+- Every packaged CatQuest accept ID must be marked reachable or safely blocked; never guess between indistinguishable quests.
 - A changed upstream schema must fail the import instead of publishing partial data.
 - Vanilla cannot detect an individual failed OGG at runtime. Package validation and GitAddonsManager Repair/Reclone are the recovery path for local corruption.
 

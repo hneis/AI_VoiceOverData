@@ -2,15 +2,18 @@
 -- ID 0 marks text that is not unique and must not fall back to another quest stage.
 AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
     SchemaVersion = 1,
-    SourceRevision = "50ec75b24cc6c5ede825fec78c27e4624da4c8a6",
-    TitleCount = 304,
-    RouteCount = 806,
-    BlockedCount = 74,
+    SourceRevision = "da341873737e0b11079ccadb90a40e82514d6367",
+    TitleCount = 406,
+    RouteCount = 937,
+    BlockedCount = 92,
     Routes = {
         ["A Call to Arms: The Plaguelands!"] = {
             ["Hear ye, hear ye! All heroes are called upon to heed these words!$B$BA call to who has set up his base camp in Chillwind Camp, north of the Alterac Mountains!"] = 0,
             ["Heroes of the realm, hear me - the Horde calls upon you for swift action!$B$BA Derrington, who has set up his base camp at the Bulwark, east of Tirisfal Glade!"] = 0,
             ["Heroes of the realm, hear me - the Horde calls upon you for swift action!$B$BA Derrington, who has set up his base camp at the Bulwark, east of Tirisfal Glades!"] = 5095,
+        },
+        ["A Collection of Heads"] = {
+            ["It is true. Hakkar now dwells in Zul'Gurub, bathing in the power of our gods. high priests responsible for channeling our gods' energy.$B$BWhen you have done this, return to me."] = 8201,
         },
         ["A Dark Threat Looms"] = {
             ["Begin collecting the disarming materials immediately, $N. Lurker Venom can be found on the indigenous Return to me once you've collected the needed items and I will prepare the mixture."] = 278,
@@ -24,6 +27,10 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
         ["A Future Task"] = {
             ["Well $N... we seem to be at a temporary dead end here. We know what no doubt, he also wants to thank you personally for once again aiding the League."] = 2964,
             ["Well $N... we seem to be at an unfortunate impasse. We know what we need no doubt, he also wants to thank you personally for once again heeding the call."] = 2968,
+        },
+        ["A Good Friend"] = {
+            ["A friend of mine named Iverron usually visits me at the same time every day. happen to be going that way, though, will you keep an eye out for him?"] = 4495,
+            ["Duskwood grows more dangerous with each passing day. Either its the rabid worgen, wandering dead eternally grateful to you.$B$BThe quickest way to Northwind is by passing through the Stormwind Harbor."] = 41797,
         },
         ["A Grim Discovery"] = {
             ["What!? You came across tauren in the area? You're joking! What did they look like!?$B$BThe back and slay them; let the rivers in Feralas run red with their dark blood."] = 2974,
@@ -44,6 +51,9 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
         ["A Light in Dark Places"] = {
             ["An eager one, aren't you? If you're willing to enter the depths once more, I'll Maul, and the halls of Blackrock Spire itself; I look forward to your return, $N."] = 9386,
             ["We are not the only ones who celebrate this holiday, $N. All creatures, all cultures, of Dire Maul, and the halls of Blackrock Spire itself; I will await your return."] = 9319,
+        },
+        ["A Little Luck"] = {
+            ["We can always use a little luck, eh? A small advantage is all it takes one of your own? Find Witch Doctor Mau'ari in Everlook. I'm not giving mine up!"] = 6606,
         },
         ["A Little Slime Goes a Long Way"] = {
             ["But the thing I've studied most is ooze. I know it sounds odd, but they're I'll give you containers, you use them to collect a sample from the deceased creatures."] = 4512,
@@ -79,9 +89,22 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["Hey, mate! Do a favor for a young man who's been fighting more than his the need arises. You should check it out... you do and I'll pay you well."] = 8,
             ["What?$B$BWhat?!$B$BYou want money? I don't owe you any money.$B$BLetter? What letter? Oh, you wanna fight Oh, you wanna fight then? All right, mate... let's do this! Owe you any money..."] = 590,
         },
+        ["A Sign of Hope"] = {
+            ["$B$B'Ryedol,$BThey're taking me to Uldaman. Send help.$B-Hammertoe' $B$B'Ryedol,$BThey're taking me to Uldaman. Send help.$B-Hammertoe'"] = 720,
+            ["$N, can ye find him? Can you find Hammertoe in Uldaman?$B$BIf those dirty Shadowforge are alive until they learn what he knows.Ye've got to hurry if you're gonna save him!"] = 721,
+        },
+        ["A Simple Request"] = {
+            ["Lord Jorach Ravenholdt has requested your presence. The matter is secret, and I cannot say the Hillsbrad Foothills -- look for a path in the mountains northwest of Durnhold Keep."] = 8233,
+        },
         ["A Supernatural Device"] = {
             ["I must find a way to speak with Anthion Harmon... or more specifically, his ghost!$B$BI for him; travel to Gadgetzan and bring it to him as payment for his services!"] = 8922,
             ["You must be quite brave to have stuck around after that. That or I've piqued dead! My last hope is to contact Anthion and find out more about my situation."] = 8923,
+        },
+        ["A Troubled Spirit"] = {
+            ["In the Blasted Lands, there is a troubled spirit who was once a great hero not die with the body, and it would serve you well to speak with him."] = 8417,
+        },
+        ["A Warrior's Training"] = {
+            ["You've shown yourself to be a competent warrior, $N. But you're still young and have a good teacher. He can show you a few moves that'll keep you breathing longer."] = 1638,
         },
         ["Against the Hatecrest"] = {
             ["At this point, I am going to direct you to my second, Latronicus. He's been seems less than optimal.$B$BAnyway, Latronicus awaits. Good work thus far, $N. Keep it up.$B$BYou're dismissed."] = 3130,
@@ -97,16 +120,36 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
         ["All Along the Watchtowers"] = {
             ["Through the use of a magical device known as a beacon torch, we can mark the tower. There are only five charges on the beacon torch, so use them wisely!"] = 0,
         },
+        ["Allegiance to the Old Gods"] = {
+            ["Some poor handwriting is scrawled on the crumpled up note:$B$B'Yes, tell all the priestesses to world will return to its greatest era! An era of rule by the Old Gods!'"] = 6564,
+            ["This Twilight's Hammer follower cannot be allowed to complete his plan. The Twilight's Hammer do Deeps, find him, and kill him. Return to me here at Zoram'gar when it's done."] = 6565,
+        },
         ["Alliance Relations"] = {
             ["As the Alliance progresses deeper and deeper into Kalimdor, incorrect conclusions may be drawn about Stonetalon Mountains and you shall come across it. When you arrive, seek out Takata Steelblade."] = 1432,
             ["Be still, $C, and allow me to share with you something important to our people, interest, then find Keldran near the western exit of the city. His hovel is there."] = 1431,
             ["The Burning Blade have many agendas, but know that they are evil to their core, demonic threats here in Desolace.$B$BSpeak to him, and he will guide you in his designs."] = 1433,
             ["The fight goes well, $N. Perhaps the Warchief will allow us to return to our to him, and he will take pride in knowing that the Warchief respects his concerns."] = 1436,
         },
+        ["Amongst the Ruins"] = {
+            ["The Twilight's Hammer has moved into the Moonshrine Ruins of Blackfathom Deeps. Their presence can I have it, I and the Earthen Ring can maybe do something to stop them!"] = 0,
+        },
         ["An Earnest Proposition"] = {
-            ["Hail, $c! I can tell by your demeanor that you've seen and done much in Bring this to me along with a few gold coins and I'll perform the exchange."] = 8918,
             ["Hail, $C! I can tell by your demeanor that you've seen and done much in Bring this to me along with a few gold coins and I'll perform the exchange."] = 0,
+            ["Hail, $c! I can tell by your demeanor that you've seen and done much in Bring this to me along with a few gold coins and I'll perform the exchange."] = 8918,
             ["Well met, $C. I've something that might interest you.$B$BI have in my possession a set bracers and a small amount of gold. You shall find the effort worth your while."] = 0,
+        },
+        ["An Imp's Request"] = {
+            ["$N, an imp in Felwood by the name of Impsy has requested your presence. It north of the Bloodvenom Falls, which I've heard is quite lovely this time of year."] = 8419,
+        },
+        ["An Unholy Alliance"] = {
+            ["Malcin claims he is outside Razorfen Downs. This ambassador must be slain--his mission a failure they've struck.$B$BFind Malcin and slay him, $N. Return to me after the deed is done."] = 6521,
+            ["My Lady,$B$BYou know very well what it is we are offering. The opportunity for you to join us. I will remain outside Razorfen Downs for the time being.$B$BBest Regards,$BAmbassador Malcin"] = 6522,
+        },
+        ["Animist's Caress"] = {
+            ["Zanza can create the ancient troll enchantments with the right components. $B$BThe first is a the piles of refuse that litter this foul place. Look inside the jinxed hoodoo piles."] = 8192,
+        },
+        ["Aquatic Form"] = {
+            ["You have completed the necessary lessons all young druids are taught before they can adopt training, allowing you to become one with the water.$B$BGoodbye, young druid. We shall speak again."] = 0,
         },
         ["Araj's Scarab"] = {
             ["Araj the Summoner lords over Andorhal from the ruined city's heart. We know that he open. Once destroyed, seize his scarab from his fallen phylactery!$B$BThe Key to Scholomance awaits, $N!"] = 0,
@@ -151,6 +194,9 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["You have been most helpful to me, $C. I would reward you with the very have all three filled, bring them to me.$B$BDo this, and the recipe will be yours."] = 2203,
             ["You have been most helpful to me, $N. I would like to reward you with have all three filled, bring them to me.$B$BDo this, and the recipe will be yours."] = 2501,
         },
+        ["Baron Aquanis"] = {
+            ["The defeated water elemental has left behind a strange water globe. You surmise that the Sancrea of the Earthen Ring. He is located at the Horde's Zoram'gar Outpost in Ashenvale."] = 0,
+        },
         ["Barov Family Fortune"] = {
             ["My dear brother Alexi. What a fool I was to spare his life. I looked reward you with vast riches. They lay in the ruins of the Scholomance. Make haste!"] = 5343,
             ["Within the Scholomance lays the Barov family fortune. I, Alexi Barov, am one of the deeds before my brother does and I shall make you wealthy beyond your wildest dreams!"] = 5341,
@@ -169,6 +215,21 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["The humans of Hillsbrad have been putting up unexpected resistance. The problem appears to be in handy when we are done with the conquering of Hillsbrad and begin razing Southshore."] = 529,
             ["The town of Hillsbrad is in disarray and we believe it will soon fall. We document as well, the Hillsbrad Proclamation. And while you're at it, steal the town registry."] = 532,
             ["Word of the attack on the northern farms has the townsfolk panicked. Most excellent.$B$BOur Deathstalkers out the cowering peasants. Lay waste to them in the name of our Dark Lady.$B$BDismissed!"] = 528,
+        },
+        ["Battle of Warsong Gulch"] = {
+            ["The battle in Warsong Gulch against the Silverwing Sentinels is of great importance. Under the $N! Come back to me with proof of serving the Horde in a worthy manner!"] = 0,
+        },
+        ["Beached Sea Creature"] = {
+            ["The corpse of what appears to be some sort of giant sea mammal lies partially beast, enough of it remains to gather a suitable sample for Gwennyth Bly'Leggonde in Auberdine."] = 4728,
+            ["The half-devoured corpse of what might have been a giant sea mammal lies on the that a suitable sample of its bones could be delivered to Gwennyth Bly'Leggonde in Auberdine."] = 4730,
+            ["The remains of a giant thresher - much larger than one you'd expect to find enough of it remains to take a sample for Gwennyth Bly'Leggonde in Auberdine to study."] = 4723,
+            ["The remains of what appear to be a giant thresher have washed ashore on the places, enough of it remains to gather a suitable sample for Gwennyth Bly'Leggonde in Auberdine."] = 4733,
+        },
+        ["Beached Sea Turtle"] = {
+            ["Another set of sea turtle remains lie beached on the coastline. This set of remains with strange markings on it; perhaps Gwennyth Bly'Leggonde in Auberdine can make sense of it."] = 4731,
+            ["More sea turtle remains lie beached along the coastline. This particular set has an abandoned with strange markings on it; perhaps Gwennyth Bly'Leggonde in Auberdine can make sense of it."] = 4725,
+            ["The skeletal remains of a sea turtle lie in the sand of the northern Darkshore sample back to Gwennyth Bly'Leggonde in Auberdine for the Temple of the Moon to study."] = 4727,
+            ["You find a corpse of a sea turtle that had beached itself on the coast the creature's remains that Gwennyth Bly'Leggonde in Auberdine might be able to make use of."] = 0,
         },
         ["Betrayed"] = {
             ["A few more moments of thought brings a few ideas to mind, one of which something far more sinister.$B$BYou close the book and begin to decide which crystal to destroy."] = 3506,
@@ -232,8 +293,8 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["You look ready for your next test, $N. You've been patient in your studies, but Ratchet. You will find her there at her fishing hut. Good luck to you, $N."] = 2985,
         },
         ["Call to Arms"] = {
-            ["The head of the beast is ready to be taken off... with great force, $N. Boulderfist lords and their lackey shaman who would try and drive us from these lands."] = 679,
             ["The Witherbark trolls and Boulderfist ogres of Arathi are working together to rid us from here. Slay them in droves, and only return when their camps run thick with blood."] = 677,
+            ["The head of the beast is ready to be taken off... with great force, $N. Boulderfist lords and their lackey shaman who would try and drive us from these lands."] = 679,
             ["Your strength is evident, $N. Now to see how you fare against a real enemy.$B$BThe spirit when you fail. I shall give praise to your tenacity in battle either way."] = 678,
         },
         ["Calm Before the Storm"] = {
@@ -241,9 +302,21 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["$N, your help has been immeasurable. The time will come, no doubt, when I'll ask be viewed as a token of my gratitude. Thank you for your assistance, brave $C."] = 4510,
             ["My recent findings and the knowledge we have gained here today needs to reach hands them involved in this $N, then we just might make it out of this alive."] = 0,
         },
+        ["Camp Mojache"] = {
+            ["Talo Thornhoof, a Tauren elder in Feralas, sends a request for aid. He offered few and dire.$B$BServe the Horde, <name>. Go to Camp Mojache in Feralas and speak with Talo."] = 7492,
+        },
+        ["Captain Sander's Hidden Treasure"] = {
+            ["If ye be readin' this, it means that Ol' Captain Sanders is in a watery Find that anchor and you'll find me locker! Look in there for the next clue."] = 136,
+            ["Searching through the barrel you discover another piece of parchment. This one reads: Now from bluffs. If ye poke around that jug, ye just might find what you're lookin' for."] = 139,
+            ["Sure enough, deep within the Old Jug there is another clue to Sander's treasure. The water, keep going! Swim straight west till you find the island with me treasure chest!"] = 140,
+            ["The clue to the treasure reads: Good work, matey! Now ye need to head due the side of the road. There you'll find an old barrel with your next clue."] = 138,
+        },
         ["Capture a Mine"] = {
             ["As battle rages over the landscape of Alterac Valley, so too does it rage through that is done, the mine will be ours and we'll send troops to protect it!"] = 7124,
             ["The mines in Alterac Valley hold more than just minerals. Both the Frostwolf and Stormpike you do that, the mine will be ours, and we'll send troops to protect it!"] = 7122,
+        },
+        ["Cenarion Aid"] = {
+            ["It is the way of the divine to help those in need. The how is He resides atop the cliffs to the northeast of the Ruins of Eldarath in Azshara."] = 8254,
         },
         ["Centaur Bounty"] = {
             ["Many clans make up the centaur race. Each has its own leader and agenda, but service of the Alliance, $N, and we will be one step closer to war's end."] = 1387,
@@ -260,8 +333,14 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
         ["Children's Week"] = {
             ["You're willing to help us here at the orphanage? Bless you, friend; your aid during and meet your ward! I'm sure the child will be most eager to meet you."] = 0,
         },
+        ["Chillwind Point"] = {
+            ["Commander Ashlam Valorfist has sent out a call for a paladin of your purity and part of the Western Plaguelands. Seek him and aid in his cause for the Light!"] = 8415,
+        },
         ["Chromatic Mantle of the Dawn"] = {
             ["$G Brother : Sister; $N - your deeds on behalf of the Argent Dawn are as a sign of tribute, and I'll give you the finest of all our mantles."] = 0,
+        },
+        ["Claiming Arathi Basin"] = {
+            ["Winning a war is about more than just outsmarting and outfighting your opponent. Victory often pointed at us! Now is the time to help the Alliance in Arathi Basin, $N."] = 0,
         },
         ["Cleansing Felwood"] = {
             ["Plants give life to Felwood, yet even they suffer the taint of corruption. I know so I may study it in the hopes of saving other forms of life here."] = 0,
@@ -290,6 +369,14 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
         ["Concerted Efforts"] = {
             ["Ah, $N. I hope you continue to lend your experience to the different battlefronts. A of our lads and lasses in the field look up to seasoned veterans like you."] = 8385,
             ["We're not fighting isolated battles against the Horde anymore, lad.$B$BVictory in one front means denying back to me after you've served against the Horde at all of our active battlegrounds."] = 8371,
+        },
+        ["Conquering Arathi Basin"] = {
+            ["Our conflict with the Alliance has escalated to a true war. No longer are false our war efforts going. Help the Defilers maintain the flow of resources we need, $N!"] = 0,
+        },
+        ["Cortello's Riddle"] = {
+            ["A far off land in Kalimdor awaits$BWhere peril has dashed hopes and fates$BEast of Barrens for those up to the test$BWaiting to be found in a cave in the southwest"] = 625,
+            ["There is an ornate, well-traveled bridge$BEast of Deadwind and south of Redridge$BUnderneath there waits something a clue$BThere it will lie for endless tomorrows$BBiding its time in the Swamp of Sorrows"] = 624,
+            ["To Lordaeron! The great land of turmoil$BWhere brave soldiers with death do toil$BFind your way Hinterlands, at the base of the great falls$BUnderneath the water there does your treasure call!"] = 626,
         },
         ["Counting Out Time"] = {
             ["I need you to reach into the world beyond this room, $N. Allow me to them in lockboxes found in the ruined buildings that make up this once proud city."] = 4972,
@@ -335,6 +422,9 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["Have you ever known love, young one? It was a thing foreign to me until I want her to come here to Mulgore. I hope that she will say yes."] = 8901,
             ["She was so sad. I could see that, once I saw past her state. I this letter to her for me? I want to be sure it finds her hands."] = 8900,
         },
+        ["Death's Embrace"] = {
+            ["Zanza can create the ancient troll enchantments with the right components. $B$BThe first is a the piles of refuse that litter this foul place. Look inside the jinxed hoodoo piles."] = 8186,
+        },
         ["Defusing the Threat"] = {
             ["I know all about landmines. I'm the one that lays all the mines on the kill him, come back here and let me know. No good deed should go unrewarded."] = 7368,
             ["The Frostwolf have their front lines and bases booby trapped, $C. You have to watch stay down.$B$BYou will probably find him in a tower near the Iceblood Garrison. Good luck!"] = 7367,
@@ -367,8 +457,14 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
         ["Dragonscale Leatherworking"] = {
             ["Dragonscale leatherworking isn't easy, but it's extremely rewarding. I'll teach you how to make this proof of your ability to acquire the staple of the trade: scales of the dragonkin."] = 0,
         },
+        ["Elanaria"] = {
+            ["Greetings, warrior. Your skill grows, but there is more to your profession than you may a teacher.$B$BThe warrior Elanaria dwells in Darnassus, at the Warrior's Terrace. She can instruct you."] = 1684,
+        },
         ["Elemental Leatherworking"] = {
             ["Elemental leatherworking is what I know, and if you're willing to open your mind to nature; to that end, bring me the purest essences of fire, water, earth, and wind."] = 0,
+        },
+        ["Elemental Mastery"] = {
+            ["Bath'rah the Windwatcher has sent out a summons for a shaman of your wisdom. He Tarren Mill. Follow the river north until you come across the ruins where Bath'rah resides."] = 8410,
         },
         ["Elixir of Agony"] = {
             ["A mudsnout composite? Absolutely brilliant! Why didn't I think of that?$B$BLet me contribute my colloid all the reagents. And my, how anxious I am to hear how his experiment goes!"] = 515,
@@ -385,6 +481,9 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["Ah, another wretched day in Tarren Mill. All of this clean air puts me in to find, Creeper Ichor. You'll find both bears and creepers just outside of Tarren Mill."] = 496,
             ["It will take but a moment for me to mix these components into what I a taste of what the Dark Lady has planned for both humans and Scourge alike."] = 499,
         },
+        ["Elmore's Task"] = {
+            ["There's a dwarven weaponsmith in Stormwind, Grimand Elmore, who sent word that he needs help the weapon shop in the Dwarven District of Stormwind, in the northeast section of town."] = 1097,
+        },
         ["Elune's Grace"] = {
             ["A wonderful day has come, $N. You've reached the age in which our priests are only then will she teach you the ancient tradition of archery mastered by our order."] = 5674,
             ["Time's a wastin', lad. It's time for you to return home to Darnassus. Priestess Alathea's said that she'd be waitin' for you in the Temple of the Moon. Good luck."] = 5675,
@@ -397,6 +496,10 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["Just look at the stables, $N! Empty! The Stormpike Brigade has no rams to ride the ram rider commander will be notifed. With your help, the cavalry will be reborn!"] = 7027,
             ["The war in the valley has taken its toll on our soldiers. We must revitalize have enough wolves stabled, the Wolf Riders will rejoin their patrol on our front lines."] = 7001,
         },
+        ["Encrypted Letter"] = {
+            ["I was asked to bring this to your attention as soon as you returned from hesitate to read it before you go about any other business here in the Abbey."] = 3102,
+            ["One of the letters on this table is encrypted and inscrutable. One of the letters on this table is encrypted and inscrutable."] = 511,
+        },
         ["Enraged Wildkin"] = {
             ["After inspecting the contents of the box, you decide that Jaron could make use of that the next step is to face the creatures and reclaim the amulet from them."] = 4864,
             ["Have you noticed the abandoned camp to the south of here? It looks like the resting at Starfall Village, west of here. I'm sure curious about what happened... aren't you?"] = 6604,
@@ -404,8 +507,17 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["Looking around, you don't see much that Jaron could want here. However, you do notice out an abandoned wagon. Perhaps you might find Jaron's things there. It's worth a look."] = 4863,
         },
         ["Errand for Apothecary Zinge"] = {
-            ["The kit is ready, $N. No doubt that Apothecary Zinge will want this as soon warmest salutations.$B$BWell, don't just stand there. Such is the life of a simple courier, yes?"] = 238,
             ["The Royal Apothecary Society needs your assistance. Listen closely, and both of us may profit you have it, bring it back to me and I'll outline your task in detail."] = 232,
+            ["The kit is ready, $N. No doubt that Apothecary Zinge will want this as soon warmest salutations.$B$BWell, don't just stand there. Such is the life of a simple courier, yes?"] = 238,
+        },
+        ["Etched Rune"] = {
+            ["While you were helping me out, this rune was given to me to pass on Take a gander at it and go find him inside Anvilmar when you've a chance."] = 0,
+        },
+        ["Facing Negolash"] = {
+            ["Negolash is a hungry giant.$B$BWhen the giants destroyed our ship, Negolash went straight for my of here along the coast. When Negolash smells all that food, he'll come for sure!"] = 0,
+        },
+        ["Falcon's Call"] = {
+            ["Zanza can create the ancient troll enchantments with the right components. $B$BThe first is a the piles of refuse that litter this foul place. Look inside the jinxed hoodoo piles."] = 8187,
         },
         ["Fallen Sky Lords"] = {
             ["Our air support is in shambles, $N. The Wing Commanders were shot down over enemy Dun'Baldar North Bunker.$B$BThat's all the information I have. Move out! Search through the areas thoroughly."] = 7302,
@@ -415,6 +527,9 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["Please inform Lieutenant Orinelle that I would like him to refocus his efforts on the the Eastern Strand. When he has results, tell him to report to me in person."] = 561,
             ["Would you believe it, $N? Redpath wasn't satisfied with all the murlocs we killed--oh now, proof of the dead, hacking off cold, slimy murloc heads to submit for his approval."] = 559,
             ["You know, $N, I'd really rather not take these heads... Since you've already got a already got a handle on them, would you mind delivering them to Redpath for me?"] = 560,
+        },
+        ["Feathermoon Stronghold"] = {
+            ["$N! Your aid is needed in Feralas!$B$BAn outlaw mage, Lethtendris, has fled to the ancient the item from Lethtendris.$B$BServe the Alliance! Seek out Latronicus at the Feathermoon Stronghold in Feralas."] = 7494,
         },
         ["Field Duty"] = {
             ["Greetings, $N. Before I assign you to more involved tasks in the war, you'll need forced to keep the two forces well apart from one another due to mutual animosity."] = 8507,
@@ -436,9 +551,18 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["That's an... interesting costume you have on. Even though you're being nice and helping a you flex, I'll give you some tasty Orgrimmar Nougat. It's a great Hallow's End treat."] = 8359,
             ["That's an... interesting costume you have on. Even though you're being nice and helping a you flex, I'll give you some tasty Stormwind Nougat. It's a great Hallow's End treat."] = 8356,
         },
+        ["Flickering Flames in Kalimdor"] = {
+            ["There are many flames burning throughout the world today, $n. The trickiest fires to tend Outpost, and near the road to Windshear Crag along the main road in Stonetalon Mountains."] = 9388,
+        },
+        ["Flickering Flames in the Eastern Kingdoms"] = {
+            ["The Midsummer Fire Festival traditionally lights up the land with a myriad of flames. Some the cliffs overlooking the lighthouse in Westfall, and by the ruined tower in Hillsbrad Foothills."] = 9389,
+        },
         ["For Great Honor"] = {
             ["Many brave fighters look up to you, $N. You continue to be an example for all in the fight against the Alliance. What news do you bring from your journeys?"] = 8388,
             ["Serving the Horde in one of the great battles against the Alliance is a source the Alliance in Arathi Basin, Alterac Valley and Warsong Gulch! For Honor! For the Horde!"] = 8367,
+        },
+        ["Forbidden Knowledge"] = {
+            ["I have the digest for you, $N. I need not tell you to take great to keep it far from unfriendly hands.$B$BThis book holds many truths...$B$B...And the truth can burn."] = 737,
         },
         ["Foul Magics"] = {
             ["I have felt a strangeness in the air... a feeling that simmers in my blood. to examine, but I dare not return to the manor. Can you bring me some?"] = 671,
@@ -483,13 +607,19 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["See, the Venture Company shredders out in Lake Nazferiti (in northern Stranglethorn) have been equipped know he keeps them in his house, but they're almost certainly under lock and key."] = 1182,
             ["You should be all set to go. Give Pozzik my regards and tell him that to ask. I'll be waiting for the news that he breaks the track record soon!"] = 1183,
         },
+        ["Good Luck Charm"] = {
+            ["It would seem that I was wrong about you $N, and for that I owe other half.$B$BMaybe her knowing I have these things will now put her soul to rest."] = 5050,
+        },
+        ["Great Bear Spirit"] = {
+            ["In the northwest part of Moonglade resides the home of a wise and noble being We will then see if you have truly taken account of the lessons it teaches."] = 0,
+        },
         ["Great-father Winter is Here!"] = {
-            ["Have a wondrous Winter Veil, friend! Be sure to say hello to Greatfather Winter, who's choose from. Fresh from our farm to your plate - it's Smokywood Pastures wholesome goodness!"] = 0,
             ["Have a wondrous Winter Veil, friend! Be sure to say hello to Greatfather Winter! If choose from. Fresh from our farm to your plate - it's Smokywood Pastures wholesome goodness!"] = 6961,
+            ["Have a wondrous Winter Veil, friend! Be sure to say hello to Greatfather Winter, who's choose from. Fresh from our farm to your plate - it's Smokywood Pastures wholesome goodness!"] = 0,
         },
         ["Greatfather Winter is Here!"] = {
-            ["Have a wondrous Winter Veil, friend! Be sure to say hello to Greatfather Winter, who's choose from. Fresh from our farm to your plate - it's Smokywood Pastures wholesome goodness!"] = 7023,
             ["Have a wondrous Winter Veil, friend! Be sure to say hello to Greatfather Winter! If choose from. Fresh from our farm to your plate - it's Smokywood Pastures wholesome goodness!"] = 7022,
+            ["Have a wondrous Winter Veil, friend! Be sure to say hello to Greatfather Winter, who's choose from. Fresh from our farm to your plate - it's Smokywood Pastures wholesome goodness!"] = 7023,
         },
         ["Guile of the Raptor"] = {
             ["Take this orb and use its energy to give Gor'mul the essence of the raptor. of the Horde, and we will have a great warrior's assistance in our unceasing battles."] = 702,
@@ -521,6 +651,9 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["One thing I will not tolerate are traitors in our midst, $N. But I would find a lieutenant's insignia off one of the Burning Blade there, and return to me."] = 5726,
             ["You are one of my lieutenants! Prepare yourself, $C. I will call upon you soon.$B$BMy in the Barrens and Ashenvale begin work on our newest agenda. Return to me soon."] = 5730,
         },
+        ["High Sorcerer Andromath"] = {
+            ["High Sorcerer Andromath wishes to speak with you, $N. He is at the top of most powerful mages not locked away in Dalaran. Council with him is high council indeed."] = 1939,
+        },
         ["Hinott's Assistance"] = {
             ["I have never seen such wondrous results from a poison! Zanzil you say? Never heard to make use of the poison?$B$BGive me a few moments to examine the toxin, $N."] = 2480,
             ["Take a sample of the mixture to Serge Hinott in Tarren Mill.$B$BIf anyone can cure Live long enough and Serge will show you the ways of poison creation and use."] = 2479,
@@ -535,6 +668,9 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
         ["Honoring a Hero"] = {
             ["During the Harvest Festival of Azeroth, we give thanks to heroes for the sacrifices - through the end of the festival, so waste no time in giving Grom his tribute."] = 8150,
             ["During the Harvest Festival of Azeroth, we give thanks to heroes for the sacrifices - through the end of the festival, so waste no time in giving Uther his tribute."] = 8149,
+        },
+        ["Hoodoo Hex"] = {
+            ["Zanza can create the ancient troll enchantments with the right components. $B$BThe first is a the piles of refuse that litter this foul place. Look inside the jinxed hoodoo piles."] = 8190,
         },
         ["How Big a Threat?"] = {
             ["Some of my brethren were rescued from a corrupt furbolg in Teldrassil, and I've vowed one of their camps, and return to me if you see any signs of corruption?"] = 984,
@@ -602,10 +738,17 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
         ["Jonespyre's Request"] = {
             ["Excuse me, friend...$B$BA colleague of mine would like to speak with you about the research Druid.$B$BIf you're interested, speak with him; no doubt, all will be revealed once you do."] = 0,
         },
+        ["Journey to the Marsh"] = {
+            ["Now it is time for you to earn your mage's wand. To begin this quest, You will find Tabetha's cottage west of Theramore, and just north of the Stonemaul Ruins."] = 1947,
+        },
         ["Just Compensation"] = {
             ["You kept your word and brought the device built by Mux. I believe a reward Bring me an ordinary belt and a set of gloves that you wish to upgrade."] = 0,
             ["You kept your word and brought the device built by Mux. I believe a reward to upgrade. I promise the ones I give you in return will be far superior."] = 0,
             ["You've proven to be a very reliable individual, $N. As much as I trust that both see this through I shall make the rest of the pieces available to you."] = 0,
+        },
+        ["Khan Hratha"] = {
+            ["$N, you helped us against the Magram. Now, help us beat the Maraudine! Kill the them until Hratha appears.$B$BKhan Hratha holds the piece of... a key. Bring it to me..."] = 1380,
+            ["The Gelkis Khan is dead, and now the Maraudine will fall! Kill the Maraudine Khan, Khan Hratha appears. Hratha holds the piece of a key. Give this piece to me..."] = 1381,
         },
         ["Knowledge of the Orb of Orahil"] = {
             ["Haha! You're doing very well for yourself, young $C.$B$BGiven time, infernals and dreadlords will bow near Strahad's tower overlooking the port town of Ratchet. Go there when you are ready."] = 4969,
@@ -624,11 +767,24 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["The blood elf Lethtendris has overstepped her bounds. So eager was she to gather magical to me so that it might be returned to more clear-headed blood elves for study."] = 7489,
             ["The mage Lethtendris, a vicious blood elf whose brutality is matched only by her twisted web to me so that its power may be released safely back into the wilds..."] = 7488,
         },
+        ["Lieutenant Paval Reethe"] = {
+            ["A glint of light on the ground catches your eye from underneath the rubble. Brushing the surface: the sign of Theramore.$B$BUnderneath the anchor is embossed the name 'Lieutenant Paval Reethe'."] = 0,
+            ["I don't recognize the name of Lieutenant Paval Reethe. Your best bet would be to able to tell you who this Reethe is with a quick check of his books."] = 1259,
+        },
+        ["Light's Hope Chapel"] = {
+            ["The Scourge have returned in greater numbers than we have seen before. The Argent Dawn document to the Keeper of the Rolls at Light's Hope Chapel in the Eastern Plaguelands."] = 9154,
+        },
         ["Look To The Stars"] = {
             ["According to Cog's blueprint, what I need now is a way to reflect light. I reflective surface for this project? I believe she once resided in southern Duskwood. . ."] = 175,
             ["My Gnomish friend, Cog, has promised to help me build a device which will let tube made by a skilled engineer. That is the first step, according to Cog's blueprint."] = 174,
             ["Now there is just one more item needed to complete this device. Cog's blueprint calls you can, bring to me his monocle and I will use that as our lens!"] = 181,
             ["The looking glass was one of my finest treasures until. . .the incident. After that picked it up. Rumor has it the devilish beast resides in the Tranquil Gardens Cemetery."] = 177,
+        },
+        ["Lord Grayson Shadowbreaker"] = {
+            ["The time has come, $N, for you to learn about what it will take for your own.$B$BI wish you the best in this trial. For the Light, noble brother !"] = 7638,
+        },
+        ["Magecraft"] = {
+            ["Archmage Xylem has been asking around lately... for someone of your experience.$B$BIf you wish to the Ruins of Eldarath. From that spot, head directly north until you reach the cliffs."] = 8250,
         },
         ["Malin's Request"] = {
             ["Greetings, $N. You have the look of an adventurer about you, and I have a agents in the Highlands already, but they've requested I send more aid. Are you interested?"] = 690,
@@ -647,6 +803,10 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
         ["Mazen's Behest"] = {
             ["As caretaker of the works here in the library of the Academy of Arcane Arts leaves the gates of Stormwind. Be a hero, and help old Dellis out, would you?"] = 1363,
             ["Master Mazen's directions were quite clear: Deliver a very important essay to Watcher Mahar Ba I am sure.$B$BCould you please try to retrieve it and deliver it to Mahar Ba?"] = 1364,
+        },
+        ["Message in a Bottle"] = {
+            ["$N, I put my faith in you and anyone you can muster to help free side of the island, but please be careful: he is not to be trifled with."] = 630,
+            ["The note reads, in fairly good handwriting:$B$BTo any that can aid me-$B$BPlease, my need for large sailing ships to the southwest.$B$BI beg of you, my would-be savior, please help me."] = 594,
         },
         ["Messenger to Darkshire"] = {
             ["I require your assistance once again. I have written to Lord Ebonlocke, requesting that he the mayor of Darkshire, in the heart of Duskwood. Do not stray from the roads."] = 145,
@@ -676,6 +836,9 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["All druids are welcome in the sacred lands of Moonglade, regardless of the current tensions with Dendrite Starblaze in Nighthaven about the path you're now on. Good luck, young druid."] = 5921,
             ["All druids are welcomed to the sacred lands of Moonglade, tauren and night elf alike. with Dendrite Starblaze in Nighthaven about the path you're now on. Good luck, young druid."] = 5922,
         },
+        ["Mor'zul Bloodbringer"] = {
+            ["$N, your delvings into the dark arts are deep. Your mastery over otherworldly denizens has quest will be perilous, but a Warlock of your stature does not shy from danger!"] = 7562,
+        },
         ["More Components of Importance"] = {
             ["$C, listen closely. Now that we have the location of the last amulet piece, we Hand in Eastern Plaguelands and retrieve a Brilliant Sword of Zealotry from the praetorians there."] = 8987,
             ["$C, listen closely. Now that we have the location of the last amulet piece, we Hillsbrad Foothills. Go there and retrieve some Soul Ashes of the Banished from their remains."] = 8988,
@@ -692,6 +855,10 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["With what we call an Evergreen Pouch, we have cultivated Tharlendris seeds in the soil can get started. If you run out, you will need to purchase more from him."] = 3781,
             ["With what we call an Evergreen Pouch, we have cultivated Tharlendris seeds in the soil may assist us. If you run out, you will need to purchase more from her."] = 3782,
         },
+        ["Myzrael's Allies"] = {
+            ["$B$BFree! I AM FREE! I am free to gather strength, hidden from my captors. For Ironforge, in a shop of the Forlorn Cavern. He knows how I can be summoned."] = 653,
+            ["$B$BFree! I AM FREE! I am free to gather strength, hidden from my captors. For me to the surface$B$BSpeak with Zaruk in Hammerfall. He knows how I can be summoned."] = 688,
+        },
         ["New Year Celebrations!"] = {
             ["Stormwind is holding a celebration for the new year! All day long today you can it!$B$BThanks, $N! Innkeeper Allison is in the Gilded Rose, in the Trade District of Stormwind."] = 8860,
             ["Thunder Bluff is holding a celebration for the new year! All day you'll find free deliver it!$B$BThanks, $N! Innkeeper Pala is in the inn near the bridge to Hunter's Rise."] = 8861,
@@ -699,6 +866,10 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
         ["News of Dogran"] = {
             ["He was stationed at Camp Taurajo, where we've been trying to weed out the quilboar. of the Stonetalon Mountains. We sent someone to get it, but they haven't returned yet."] = 1510,
             ["My mate, Dogran, was recently sent to the Crossroads for duty. It was a promotion, if they have any news? He worked with Gazrog, who should still be stationed there."] = 1509,
+        },
+        ["Noboru the Cudgel"] = {
+            ["Noboru has plagued the Draenei of the Harborage for months, and his cudgel is a a symbol of the brutality they have suffered at the hands of the lost ones."] = 1392,
+            ["There is one we fear. His name is Noboru the Cudgel, and he roams with and bring us his weapon so that we may still survive on this foreign world."] = 40030,
         },
         ["Nothing But The Truth"] = {
             ["Everything is proceeding according to plan, $N. I want you to give this truth serum this truth serum to Deathstalker Zraedus and he'll show you how to administer it.... properly.$B$BHaha!"] = 1388,
@@ -725,6 +896,10 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["Now you're ready to turn it up a notch. If you want to prove yourself boys are tougher. They're not as easy as the young ones you were killing earlier."] = 191,
             ["You've almost proven yourself to be a master hunter of panthers. A panther by the kill the great Bhag'thera.$B$BBring me the Fang of Bhag'thera and you'll have earned my respect!"] = 193,
         },
+        ["Parts of the Swarm"] = {
+            ["Head back to Belgrom in Orgrimmar and tell him Moktar be doing his bidding well progress, and I hope to be havin' learned more soon. That should please him greatly."] = 1184,
+            ["You inspect the carapace carefully. As you turn it over in your hands you realize It could help him figure out what these creatures are, and where they come from."] = 1148,
+        },
         ["Passing Word of a Threat"] = {
             ["$B$BOch, these are evil tidings.$B$B$N, please return to Historian Karnik and tell him on the on this information swiftly and decisively. He must halt the Shadowforge's activities in the Badlands."] = 726,
             ["$N, run and find Advisor Belgrum as quickly as you can. Tell him what you've put a stop to those Shadowforge cretins' activities in the Badlands. We can only pray."] = 725,
@@ -733,9 +908,21 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["Ah, $N, it is fortuitous that you have come to me again. Your revelations at of the Watchers in the Tanaris desert. She waits for you on the Elder Rise."] = 2965,
             ["Greetings once again, $N! Your discovery inside Uldaman has set the Explorers' League abuzz with in the Tanaris desert. He would like to speak with you as soon as possible!"] = 2963,
         },
+        ["Power over Poison"] = {
+            ["You've learned what it means to cure poison without the benefit of spiritual aid. Remember the student understands the lesson given unto him .$B$BFarewell, young druid. We shall speak again."] = 0,
+        },
         ["Prayer to Elune"] = {
             ["Will you assist me, mortal? Hear my tale. Will you assist me, mortal? Hear my tale."] = 3377,
             ["Will you assist me, mortal? Will you find the prayer to Elune?$B$BAs I stated, the its inhabitants, but my prayer must be heard. Absolution is the last thing I expect."] = 3378,
+        },
+        ["Presence of Might"] = {
+            ["Zanza can create the ancient troll enchantments with the right components. $B$BThe first is a the piles of refuse that litter this foul place. Look inside the jinxed hoodoo piles."] = 8184,
+        },
+        ["Presence of Sight"] = {
+            ["Zanza can create the ancient troll enchantments with the right components. $B$BThe first is a the piles of refuse that litter this foul place. Look inside the jinxed hoodoo piles."] = 8189,
+        },
+        ["Prophetic Aura"] = {
+            ["Zanza can create the ancient troll enchantments with the right components. $B$BThe first is a the piles of refuse that litter this foul place. Look inside the jinxed hoodoo piles."] = 8191,
         },
         ["Prospect of Faith"] = {
             ["$B$BFind Ryedol, $N. Bring 'im me amulet. He'll... figure out what to do. He knows mission to stop the Shadowforge clan. They must not be allowed to find the scrolls..."] = 723,
@@ -787,12 +974,45 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["I had myself a fine job as a digger at the Uldaman excavation site in the end of the North Common Hall. That's the one you need to get in."] = 1360,
             ["Sweeping the bat pens with this broom is not befitting a Garrett! I've earned a infernal bats.$B$BReclaim my family's treasure and bring it to me! Help me restore my birthright!"] = 2342,
         },
+        ["Reclaiming the Charred Vale"] = {
+            ["As a protector of the forest spirits you can undoubtedly guess why I am alarmed.$B$BYou on the land refuse us passage in to begin regrowth.$B$BDrive the wretched harpies out, $N!"] = 1057,
+            ["The Bloodfuries have been subdued. But they will regroup soon enough if action is not the reclamation of the Charred Vale.$B$BSend word of our need! Seek him out at once!"] = 1059,
+        },
+        ["Regthar Deathgate"] = {
+            ["A warrior of the Horde, Regthar Deathgate, is recruiting agents for a mission into the bunkers west of the Crossroads.$B$BAnd sharpen your weapons. Desolace is a place torn by war."] = 1361,
+        },
+        ["Rejold's New Brew"] = {
+            ["Rejold Barleybrew at Brewnall Village has been asking for you.$B$BHe wants to talk to you see what he has to say.$B$BThere could be some free booze in it for you..."] = 415,
+        },
         ["Remember Alterac Valley!"] = {
             ["Make no mistake about it, $N. The Horde is quite right when they say Alterac Go now, $C, do your part in the battle for Alterac Valley. For the Alliance!"] = 8375,
             ["The Battle in Alterac Valley rages on, $N! Have you done your part as of in Alterac Valley rages on, $N! Have you done your part as of late, $N?"] = 8383,
         },
+        ["Report to Anastasia"] = {
+            ["The mages of the Undercity have noted a magical disturbance within the city, and have Hartwell can tell you more. Speak with her in the Magic Quarter in the Undercity."] = 1959,
+        },
+        ["Report to Gryan Stoutmantle"] = {
+            ["Looks to me you've seen quite a bit of combat in your time, $C. If the stone tower on Sentinel Hill, just off the road in the middle of Westfall."] = 109,
+        },
+        ["Report to Jennea"] = {
+            ["Your knowledge of the craft grows, young $N. Are you now ready to begin your has a task for you which will open your first window into the invisible world."] = 1919,
+        },
         ["Report to Kadrak"] = {
             ["Have you ever been to Ashenvale, to the north? The horde has recently set up watch tower. He is heading up the Ashenvale campaign and can give you further orders."] = 0,
+        },
+        ["Restoring the Necklace"] = {
+            ["You are going to need to find some 'oomph' for the necklace, and Uldaman is to Ironforge when you have it, and we'll get it all fixed up for you!"] = 2204,
+        },
+        ["Return of the Ring"] = {
+            ["Opening the box produced by the Sparklematic 5200 reveals a shiny ring! Donning the ring, the initials of the ring's crafter. Keep the ring... or find 'NOG' - decisions, decisions..."] = 2949,
+            ["Opening the box produced by the Sparklematic 5200 reveals what you had suspected - a of the ring's crafter. Keep the ring... or return it to this person. Decisions, decisions..."] = 2947,
+        },
+        ["Return to Thunder Bluff"] = {
+            ["Here is the toxin. If you use it against the Venture Company it should produce Apothecary Zamah. She must create a delivery method for the toxin to maximize its effect."] = 1067,
+            ["You access the pedestal again; the platinum discs suddenly appear once more in your backpack.$B$BWith has come to return to Thunder Bluff and inform the Nara Wildmane of your discovery."] = 2967,
+        },
+        ["Return to the Marsh"] = {
+            ["It is time, $N, for you to speak with Tabetha... the hermit of Dustwallow Marsh. creation of a powerful mage's implement.$B$BTabetha's shack lies deep in Dustwallow Marsh, west of Theramore."] = 1953,
         },
         ["Returning Home"] = {
             ["A priestess recently visited our halls seeking you out, young $R. She said that she arrive, seek out a Priestess Alathea--she will tell you more.$B$BThe Light be with you, $N."] = 5631,
@@ -832,6 +1052,12 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["But wait, what's this? Shreev left the safety on. That will limit the amount of take this to the Gadgetzan Gizmorium in the Tanaris Desert and have Shreev remove this."] = 1188,
             ["There, I did what Razzeric wanted. Just tell him to be careful when he sets shame, too, if that happened. Who knows if our nineteenth driver would be any good?"] = 1189,
         },
+        ["Samophlange"] = {
+            ["Pulling open the face of the control console reveals a dense jumble of wires, tubing deeper into the console, you find the samophlange. A tug removes it from its housing."] = 902,
+            ["The Venture Company set up a small research facility far to the north of here, manual, you should be able to figure out how to disengage the samophlange from it."] = 894,
+            ["The three control valves are currently opened. The various readings on the control panel lead to presume that they must be shut off before the apparatus can be shut off."] = 900,
+            ["With the apparatus deactivated, the control panel can be opened up and the samophlange removed in place, all that is left is to acquire the key to unlock the console."] = 901,
+        },
         ["Sarkoth"] = {
             ["$C! I thought I would die out here with none to know of it. While My honor must be upheld! I fought it up on the plateau to the south."] = 790,
             ["Seeing the deed you have done for me steels my heart. I cannot fall so return to the Den and tell Gornek of my situation. Perhaps he can help me."] = 804,
@@ -869,6 +1095,14 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["I was planning on sending my apprentice to my brother Senir with my report, but road back to Anvilmar, then keep heading east to the tunnel, Thalos is stationed nearby."] = 282,
             ["The troggs in the tunnel are extremely hostile, and haven't shown any hesitation in attacking out on the other side, just keep following the road, it'll run right into Kharanos."] = 420,
         },
+        ["Serpentbloom"] = {
+            ["Although your main quest is saving Naralex from the Nightmare, we might learn more about serpent.$B$BI want you to venture into the caverns and bring me 10 of these plants."] = 60125,
+            ["The Royal Apothecary Society, based in the great Undercity of Lordaeron, has sent me here the darkest recesses of the Wailing Caverns, a dangerous cave system located in the Barrens."] = 962,
+        },
+        ["Shadowguard"] = {
+            ["Like many of our own priests, your own tribe puts you through rites of passage. and speak to Ur'kyo. What he teaches you might be very important for the future."] = 5643,
+            ["Something important is up in Orgrimmar, $N.$B$BThe normal messengers that come through here looking for long in Thunder Bluff. I'd return to the Valley of Spirits as soon as possible."] = 5642,
+        },
         ["Shadowshard Fragments"] = {
             ["I've recently begun testing various crystals and their arcane properties. Lady Proudmoore has given me very thankful. I could even fashion you a trinket from them if you so desired."] = 7070,
             ["Strong magics be found in the centaur holy place... the holy place of Maraudon. The you somethin' for your time.$B$BThe place be dangerous, so maybe you be bringing some friends."] = 7068,
@@ -884,12 +1118,21 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["If there's one thing you'll learn about Southshore it's that we have some of the some Turtle Meat from the Snapjaws up north and Soothing Spices, I'll whip some up!"] = 555,
             ["Who says that the undead don't know anything about cooking? Take my secret recipe for some Turtle Meat from the snapjaws and soothing spices, I'll show you how it's done!"] = 7321,
         },
+        ["Speak with Ruga"] = {
+            ["You are a warrior of skill and growing renown. Perhaps you are ready for Ruga find Ruga in Camp Taurajo in the Barrens.$B$BHe awaits those warriors who answer his call."] = 1823,
+        },
+        ["Speak with Un'thuwa"] = {
+            ["Un'thuwa, tribal mage of Sen'jin Village, detects a disturbance in the magic currents of Durotar can to help him.$B$BDo this, and in time further secrets will be revealed to you."] = 1883,
+        },
         ["Stinky's Escape"] = {
             ["Great, finally something that doesn't want to eat me!!$B$BI need help handling the critters around help me out of here, and watch my back as I look for Mebok's plant?"] = 1270,
             ["Great, finally something that doesn't want to eat me!$B$BI need help handling the critters around help me out of here, and watch my back as I look for the bogbean?"] = 1222,
         },
         ["Stolen Winter Veil Treats"] = {
             ["Listen... not to shatter the magic of the season here, but Smokywood Pastures could use our man went to look for it.$B$BSee if both are out there, safe and sound!"] = 0,
+        },
+        ["Stonegear's Search"] = {
+            ["Pilot Stonegear loves his siege engine, as every pilot should! And he's always eager to itch, then find Stonegear at Steelgrill's Depot in Dun Morogh and see what he wants."] = 467,
         },
         ["Stranglethorn Fever"] = {
             ["Sick...so...very s-s-sick....$B$B...have contracted Stranglethorn Fever...deadly v-v-virus...$B$B...only cure...is...is...to eat the heart of M-m-m-m-mokk the Savage...elusive white white beast...$B$B...Witch doctor Unbagwa...only one who can s-s-summon....$B$B...seek Unbagwa in hidden cave on southern cape...$B$B...hurry...dying...dying...."] = 348,
@@ -914,6 +1157,13 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["Say, $N, you seem to be an adventurous type. My fleet is stuck in Booty off the Arathi coast.$B$BCan I trust you to deliver this message safely and in confidence?"] = 670,
             ["The treasure has been on the sea floor so long that the gems have calcified I have important scientific business to tend to up on the safe, dry land....er, yeah."] = 666,
         },
+        ["Suntara Stones"] = {
+            ["$B$BI'm badly injured, $R. Feel... light headed... World spinning... Bleeding... internally.$B$BI must get back to Feel... light headed... World spinning... Bleeding... internally.$B$BI must get back to Ironforge. Help me, $N."] = 3367,
+            ["Brother,$B$BIf you are reading this letter, I am no more. How it got to you, complete something called Obsidion.$B$BHelp them, brother. It is the final wish of a dead man.$B$B-Dorius"] = 3368,
+        },
+        ["Suspicious Hoofprints"] = {
+            ["Rows of hoofprints lead away from the still-smoking skeleton of the Shady Rest Inn. There impressions, with more rows of prints almost imperceptible in the soft mud of the marsh."] = 0,
+        },
         ["Sweet Amber"] = {
             ["Amber is the hue of my life's longest love$BLike the last embers of dusk in me so that my love shall be born$BOne sack of each: barley, rye and corn."] = 49,
             ["I'll mix and mix till we have a mash$BFor this will be our own private must be fashioned of metal strong$BBring me some Truesilver so I can finish this song."] = 50,
@@ -921,15 +1171,21 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["Mellifluous liquid clear as a baby's tears$BTurns a lovely deep amber over the years$BBut before we proceed to get lit to the hilt$BA barrel of charred oak must be built."] = 53,
             ["Not yet filtered but freshly distilled$BLike unseeded land waiting there tilled.$BNext I will fashion our I will fashion our pile of charcoal$BDeliver a sycamore branch, that is your next goal."] = 51,
         },
+        ["Syncretist's Sigil"] = {
+            ["Zanza can create the ancient troll enchantments with the right components. $B$BThe first is a the piles of refuse that litter this foul place. Look inside the jinxed hoodoo piles."] = 8185,
+        },
+        ["Tabetha's Task"] = {
+            ["Rumor is that Tabetha, a mage colleague who lives deep in Dustwallow Marsh, has a alone.$B$BYou will find Tabetha's cottage west of Theramore, and just north of the Stonemaul Ruin."] = 2861,
+        },
         ["Taking Back Silithus"] = {
             ["Attention, champions of the Horde! There's a threat we've left unchallenged for too long. Tremors combatants are to report to Windcaller Proudhorn at Cenarion Hold! The silithid shall be vanquished!"] = 8276,
             ["Attention, heroes of the Alliance! The silithid menace has been left unchecked for too long. in the defense of Azeroth! Report to Windcaller Proudhorn at Cenarion Hold for specific instructions!"] = 8275,
         },
         ["Taming the Beast"] = {
             ["Alright, on to the last one. Personally for me, taming any flying animal is the one and return to me. This is your final lesson. Give it everything you have!"] = 60162,
+            ["As Quel'dorei, our intrinsic connection to magic sets us apart. Yet, in the realm of energies that course through Azeroth. May your endeavors prove you a true master of both."] = 41179,
             ["As a hunter, it is important to remember the responsibility you hold in your hands. able to tame a webwood lurker. Tame it, and practice your skills as a hunter."] = 6063,
             ["As a tauren, it is important to follow the traditions of our ancestors by fighting much to learn. Begin by taking this taming rod; you must tame an adult plainstrider."] = 6061,
-            ["As Quel'dorei, our intrinsic connection to magic sets us apart. Yet, in the realm of energies that course through Azeroth. May your endeavors prove you a true master of both."] = 41179,
             ["As you can see, hardly a living creature remains in these forsaken lands. Such as where they stand. Find a Plagued Bear, awaken its mind, and bring it to me."] = 40250,
             ["Good, good. Just taming one beast is not enough to understand the concept of master land animal. Test your luck with these crabs and come back with your crustaceous companion."] = 60161,
             ["Haha! My, that boar sure is a BIG one, isn't it? I bet you'd like feisty than that boar! Don't underestimate them or you might end up as kitty kibble!"] = 80341,
@@ -986,9 +1242,13 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["This fossil bears a striking resemblance to one I once saw in Ironforge. An archaeologist Perhaps he can reveal the secrets of the past.$b$bThe ship to Menethil departs from Theramore."] = 942,
             ["What an honor it was when Master Greywhisker assigned me to work under the guidance ran back to Auberdine for help.$B$BPlease travel south and see if the prospector is ok!"] = 729,
         },
+        ["The Admiral's Orders"] = {
+            ["Humans cannot be trusted. We fought alongside them with a weary heart, knowing they would get these orders to Nazgrel in Orgrimmar immediately! He can be found in Thrall's chamber."] = 831,
+            ["You open the aged and weathered envelope and discover an official looking document. You recognize important. Perhaps Gar'Thok, the commander of Razor Hill, would be interested in having this information."] = 830,
+        },
         ["The Alliance Needs Your Help!"] = {
-            ["Hello, I'm glad that you've decided to hear me out. The Alliance needs all of Marshal Snowfall. What do you say, <class>? Will you help out with the vital preparations?"] = 8795,
             ["Hello, I'm glad that you've decided to hear me out. The Alliance needs all of Marshal Snowfall. What do you say, $C? Will you help out with the vital preparations?"] = 0,
+            ["Hello, I'm glad that you've decided to hear me out. The Alliance needs all of Marshal Snowfall. What do you say, <class>? Will you help out with the vital preparations?"] = 8795,
         },
         ["The Art of the Armorsmith"] = {
             ["Satisfaction. It is what I draw from the hammer and the anvil. To see a need only to ask and I shall train, but, a task you must first complete."] = 5301,
@@ -1018,8 +1278,8 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
         ["The Black Shield"] = {
             ["Ah, I almost missed this... The leather strap on the back must have burned off, I can tell you. Tell Captain Vimes I'm sorry I couldn't be of more help."] = 1320,
             ["Ah, I remember now! Mosarn is a well-respected blacksmith in Thunder Bluff. I knew I lead, but since we didn't get anything useful out of Reethe, it's all we have."] = 1276,
-            ["An iron shield, blackened by the fire that raged through the inn, is affixed to up the Shady Rest Inn.$b$bThe shield can be removed from the brick of the chimney."] = 1251,
             ["An iron shield, blackened by the fire that raged through the inn, is affixed to up the Shady Rest Inn.$B$BThe shield can be removed from the brick of the chimney."] = 1253,
+            ["An iron shield, blackened by the fire that raged through the inn, is affixed to up the Shady Rest Inn.$b$bThe shield can be removed from the brick of the chimney."] = 1251,
             ["Hmm... I don't see anything out of the ordinary with this shield. We should have see if he can tell us more about it, but I wouldn't hold out hope..."] = 1321,
             ["Hmmm, there's writing right here on the rim of the shield, but it's hard to would do good. Get me some of their sacs and I can clean this up."] = 1322,
             ["I'm sorry I can't be of much help, $N, but I can refer you to forge at the smithy.$B$BTake the shield to him, and see what he can tell you."] = 1319,
@@ -1036,6 +1296,21 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["Have you met the Brassbolts brothers? They're over in the Shimmering Flats, in Kalimdor, racing his next experiment.$B$BHe probably needs help getting that part. Speak to him and find out."] = 2769,
             ["You ever heard of the Shimmering Flats? It's a stretch of salt flats way over some Siege Engine helmets, but I have duties here. I can't make the trip!$B$BCan you?"] = 1179,
         },
+        ["The Brood of Onyxia"] = {
+            ["Onyxia's brood has been scattered across the Dragonmurk. It is imperative that no more whelps surrounding area remains a breeding ground.$B$BAs for Mok'Morokk... I have other plans for the sod."] = 1172,
+            ["Stonemaul Village was invaded by the brood of Onyxia. But why would the daughter of laying siege to a small band of ogres.$B$BNotify Mok'Morokk at once! Action must be taken."] = 1170,
+            ["You leave me alone now. Go tell Draz'Zilb we stay here. No black dragon here. You leave me alone now. Go tell Draz'Zilb we stay here. No black dragon here."] = 1171,
+        },
+        ["The Captain's Chest"] = {
+            ["I used to sail a ship from here all the way to Ratchet, in Kalimdor. him and get back my chest! Do that, and you'll have earned a captain's gratitude."] = 0,
+        },
+        ["The Captain's Cutlass"] = {
+            ["After I lost my first ship to those giants, I bought another. Named Smotts' Revenge, the Smotts' Revenge, and survived the last attack. He can help you find the giant."] = 0,
+        },
+        ["The Collector"] = {
+            ["My people have been divided. We've endured much on the escape from our home, in but should you be able to convince him to join us; please, do not hesitate."] = 41296,
+            ["This note is a schedule with a list of days and times when a person Patch in eastern Elwynn.$B$BThis sounds important. You should report it to Marshal Dughan in Goldshire."] = 123,
+        },
         ["The Corrupter"] = {
             ["Although I have no knowledge of this Lord Azrethoc, I agree with Maurin, he must are ready, head directly south, and return to me when the threat has been ended."] = 1488,
             ["An oracle crystal would do nicely. They are crafted by the naga for their oracles careful and make haste.$B$BWhen you return, we shall see about finding this demon lord Azrethoc."] = 1482,
@@ -1043,14 +1318,21 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["The torn skin smells rotten, and is remarkably pliable for something that appears to be is a signature of some kind.$B$BPerhaps it is something Maurin could tell you more about?"] = 1480,
             ["This creature is far more dangerous than I had anticipated. No doubt Takata questions my do not press too hard. It is better if he thinks it his own idea."] = 1484,
         },
+        ["The Crown of Will"] = {
+            ["All that remains is to deliver the Crown of Will to Sharlindra in the Undercity. thinking to use it for your own purposes, $N, Mug'Thol's fate should be illustration enough."] = 521,
+            ["Mug'Thol and his Crushridge ogres have overrun the ruins of Alterac. It will be hard him without thinning out the ogres' numbers.$B$BAfter softening them up, we'll proceed.$B$BUnderstood? Good. Now go."] = 518,
+            ["Mug'Thol and his ogre warband was sent to Alterac to retrieve the Crown of Will an example made, travel to Tarren Mill in Hillsbrad and report to Melisara, my lieutenant."] = 495,
+            ["Targ, Muckrake, and Glommus are Mug'Thol's lieutenants. They are loyal to him, though who can $N, and then all that will remain is to remove Mug'Thol's head, crown and all."] = 519,
+            ["With Mug'Thol's lieutenants dead, all that remains is to kill Mug'Thol and retrieve the Crown his head and the Crown to me. The Crushridge resistance will be at an end."] = 520,
+        },
         ["The Darkmoon Faire"] = {
             ["The Darkmoon Faire is coming! Be sure to experience all the wonders and excitement of now, the Faire is just outside Thunder Bluff, in Mulgore. Don't miss out! Go today!"] = 7926,
             ["The Darkmoon Faire is coming! Be sure to experience all the wonders and excitement of now, the Faire is outside Goldshire, in the Elwynn Forest. Don't miss out! Go today!"] = 7905,
         },
         ["The Deathstalkers"] = {
             ["If you wish to join the Deathstalkers, Lord Varimathras' elite guard, you will have to know less of the nature of this business. Succeed and I shall tell you more."] = 1886,
-            ["The letter of introduction should be enough to convince Andron that you are the messenger with Andron, and obtain this information. You'll find him at his shop near the Apothecarium."] = 1898,
             ["The Syndicate? I would never have suspected. It seems the lords of Alterac have fallen the one to deliver it to him.$B$BAh, and how could I forget?$B$BWelcome to the Deathstalkers."] = 1978,
+            ["The letter of introduction should be enough to convince Andron that you are the messenger with Andron, and obtain this information. You'll find him at his shop near the Apothecarium."] = 1898,
             ["You'll find the ledger with the information your employers seek on the bookshelf behind me. sent you, if they find enough value that they should wish to continue our arrangement."] = 1899,
         },
         ["The Defense of Grom'gol"] = {
@@ -1060,8 +1342,8 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
         ["The Defias Brotherhood"] = {
             ["I wonder what Wiley meant when he mentioned the Stonemasons. Perhaps that was a slip this growing mystery. If you have trouble finding Shaw, check the Barracks in Old Town."] = 135,
             ["So Stoutmantle sends a scrawny $R like you to protect me? Guess you'll have to me know when you and any friends you can round up are ready to go."] = 155,
-            ["The band of wretches responsible for driving the good people of Westfall from the land to Lakeshire in the Redridge Mountains, east of Elwynn, and find out what you can."] = 65,
             ["The Stonemasons' Guild was run by a man named Edwin VanCleef. VanCleef was responsible for a more detailed account for your Master in Westfall. Take this to him at once!"] = 141,
+            ["The band of wretches responsible for driving the good people of Westfall from the land to Lakeshire in the Redridge Mountains, east of Elwynn, and find out what you can."] = 65,
             ["There is but one task left for you to complete. Edwin VanCleef must be assassinated. rest once and for all. Bring me the villain's head once the deed is done."] = 166,
             ["We need to discover the location of the Defias hideout. $N, my scout reports that to capture him. If he resists, kill him and bring me whatever he is carrying."] = 142,
             ["What I am about to tell you could cost me my life. The Defias gang goblins.$B$BTake this note to Stoutmantle. It explains as much as I know on the subject."] = 132,
@@ -1074,6 +1356,10 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["In the thick of Plaguewood lies the entrance to the dread citadel of Naxxramas. Previously, cause of the Dawn is admirable, we are willing to incur some of those costs."] = 9122,
             ["In the thick of Plaguewood lies the entrance to the dread citadel of Naxxramas. Previously, dedication to the cause of the Dawn is unwavering! We will waive all cost associations."] = 9123,
             ["In the thick of Plaguewood lies the entrance to the dread citadel of Naxxramas. Previously, may decline and choose to return when you are revered or exalted for a discount."] = 9121,
+        },
+        ["The Escape"] = {
+            ["I suppose I'll learn as we go... Couldn't be too hard. Just some buttons here, Just some buttons here, and a lever or two... Well, are you ready to go?"] = 863,
+            ["Take this invisibility liquor to young Maybell. It should last long enough for her to liquor to young Maybell. It should last long enough for her to visit Tommy Joe."] = 114,
         },
         ["The Everlook Report"] = {
             ["I am looking for a responsible individual to aid me in a small but nonetheless perfect means to introduce yourself to my superior and perhaps earn some work from her!"] = 6028,
@@ -1090,12 +1376,19 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["If you wish to take on this task, present Lydros with the dull blade. If you wish to take on this task, present Lydros with the dull blade."] = 7508,
             ["Take the unfired ancient blade to the lair of Onyxia and engage her in battle.$B$BSome dragon.$B$BPlunge the heated ancient blade into her smoldering corpse to fashion the treated ancient blade."] = 7509,
         },
+        ["The Hermit"] = {
+            ["I did not always call this place home, infact I come from far away lands, are you ready for what is presented before you, will you step into the abyss?"] = 40210,
+            ["There was an old man who used to come into town to buy supplies rather Hill cemetery, if I remember correctly. Perhaps you should go see if something is amiss."] = 165,
+        },
         ["The Hero of the Day"] = {
             ["Listen... I'm not really supposed to be telling you this, but since you're the hero oh let's say five gold. It'll net you a nice batch that's yours to keep."] = 0,
         },
         ["The Horde Needs Your Help!"] = {
-            ["Hello, I'm glad that you've decided to hear me out. The Horde needs all of Warlord Gorchuk. What do you say, <class>? Will you help out with the vital preparations?"] = 8792,
             ["Hello, I'm glad that you've decided to hear me out. The Horde needs all of Warlord Gorchuk. What do you say, $C? Will you help out with the vital preparations?"] = 0,
+            ["Hello, I'm glad that you've decided to hear me out. The Horde needs all of Warlord Gorchuk. What do you say, <class>? Will you help out with the vital preparations?"] = 8792,
+        },
+        ["The Hunter's Charm"] = {
+            ["Ogtinc of Azshara has sent out a call for seasoned hunters such as yourself. He speak with him.$B$BOgtinc resides atop the cliffs of Azshara, northeast from the Ruins of Eldarath."] = 8151,
         },
         ["The Hunter's Path"] = {
             ["Greetings, dark ranger aspirant. You appear more than capable of handling a beast to claim Only he possesses the knowledge you seek to enthrall the creatures of this wretched land."] = 40261,
@@ -1103,9 +1396,12 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["Hello, young hunter. You look to me like you are skilled enough to handle a Dolanaar. He can put you on the path to earning a pet of your own."] = 0,
             ["Hello, young hunter. You look to me like you are skilled enough to handle a Hill. He can put you on the path to earning a pet of your own."] = 0,
             ["Hello, young hunter. You look to me like you are skilled enough to handle a Kharanos. He can put you on the path to earning a pet of your own."] = 0,
-            ["Hello, young hunter. You look to me like you are skilled enough to handle a one of your own kin. Clover Spinpistol in Kharanos should be able to help you."] = 80339,
             ["Hello, young hunter. You look to me like you are skilled enough to handle a Village. He can put you on the path to earning a pet of your own."] = 0,
+            ["Hello, young hunter. You look to me like you are skilled enough to handle a one of your own kin. Clover Spinpistol in Kharanos should be able to help you."] = 80339,
             ["Hello, young ranger, you appear to be doing well!$B$BOur people struggles but we must endure, a technique would be useful to you, see if you can learn it from her."] = 80366,
+        },
+        ["The Islander"] = {
+            ["Your renown as a warrior grows, $N. Now it is time to pit yourself against warrior's path.$B$BTo reach Fray Island, search for the sand bar shallows along the Merchant Coast."] = 1718,
         },
         ["The Karnitol Shipwreck"] = {
             ["Intriguing.$B$BWell, we might not be without hope quite yet.$B$BAlong that same coast, but to the find Karnitol's belongings, I'd start with the more powerful naga: the tidehunters or sea witches."] = 1456,
@@ -1165,8 +1461,8 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["Recently a diplomat was sent to Theramore to meet with Jaina Proudmoore. That diplomat never friend of mine named Jorgen. Find him, give him this note, and follow his instructions."] = 1241,
             ["So yeah... um... I might know something 'bout that meeting at Addle's Stead. Happened a came out of Menethil; guy called Slim. That's all I know regarding their backup plan."] = 1247,
             ["Take this here note to Elling Trias. Don't say nothin' else to him. Just be can find Trias at his cheese shop, Trias' Cheese, in the Trade District. Good luck."] = 1242,
-            ["The beginning of every month the Kul Tiras Marines all get paid and usually leave loyal to Proudmoore, but if you drop Elling's name, he should help you out... discretely."] = 1264,
             ["The Defias didn't pay me well enough to die for their cause. They took the was in the harbor. The guy's name was Hendel. That's all I know. I swear!"] = 1250,
+            ["The beginning of every month the Kul Tiras Marines all get paid and usually leave loyal to Proudmoore, but if you drop Elling's name, he should help you out... discretely."] = 1264,
             ["What?! You come here accusing me of allying with the Defias, and think I'll just while you insult me?! Something tells me you've had this coming for a long time."] = 1324,
             ["Whoa, this looks way too complex to be something to just lead you astray. I knew about any of this and didn't share it with them they'd probably hang me."] = 1245,
             ["Yeah, now that I think about it... Dashel... Dashel something... What was his name? FIST! deep as these papers suggest, then he's not going to give you any information willingly."] = 1246,
@@ -1211,6 +1507,10 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["Dreadmist Peak to the northwest of the Crossroads is most likely a primary candidate as one that requested our aid, and you will work with him to address this malady."] = 6127,
             ["The Cliffspring Falls in Darkshore serves as the principal source of drinking water for the one that requested our aid, and you will work with her to address this malady."] = 6122,
         },
+        ["The Ravaged Caravan"] = {
+            ["A few days ago, we found a Venture Co. caravan traveling under guard on the were wrong.$B$BPerhaps you could go to the caravan and examine the contents of the crates."] = 749,
+            ["Prying open the lid reveals a tightly packed assortment of ore and minerals, more evidence can barely hear the sounds of work, and see smoke rising from a large fire."] = 751,
+        },
         ["The Reason for the Season"] = {
             ["Gifts, treats, presents... bah, I say!$B$BThose goblins pollute the true meaning of this season - Creststrider. I'm sure he'll be surprised that someone cares about history rather than getting presents."] = 6964,
             ["Gifts, treats, presents... bah, I say!$B$BThose goblins pollute the true meaning of this season - League. I'm sure he'll be surprised that someone cares about history rather than getting presents."] = 7062,
@@ -1250,6 +1550,9 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
         ["The Source Revealed"] = {
             ["Look, the actions of a rogue apothecary are not my concern. If he's undermining our hills over Hillsbrad. To be honest with you, I thought he was a little odd."] = 8984,
             ["What, treason? No, no. I assure you, my intentions are completely harmless. Is it so foothills over Hillsbrad past that mysterious Ravenholdt Manor. I wish you luck in finding him."] = 9028,
+        },
+        ["The Sparklematic 5200!"] = {
+            ["This contraption stands out amongst the gnomes holding out against the madness outside the room. Sparklematic 5200 a moment for operation, and voila! Your valuables will emerge clean and shiny!'"] = 0,
         },
         ["The Star, the Hand and the Heart"] = {
             ["Yagyin's Digest, eh? Are you starting a new chapter of us, somewhere? Never mind, it speak their names. Ears may be on us. But here, I will write them down."] = 735,
@@ -1342,6 +1645,13 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["To the east of where we are, near where the Eastern Plaguelands begin, once proud for their suffering is a swift death, one that must be ministered by your hand."] = 4985,
             ["While there was little I could do alone to thwart the Scourge, I nevertheless came put them down. Please $N, end their misery - doing so will surely soothe mine."] = 4984,
         },
+        ["The Woodland Protector"] = {
+            ["Something evil is brewing in the forests of Teldrassil. Look long the hills to where and see if they are indeed caught under the enchantment of the wicked Fel Moss."] = 459,
+            ["Thank goodness you are here, $C. Strange news has traveled to me through the whisperings in our grove. One of the Sentinels reported seeing her to the southwest of Aldrassil."] = 458,
+        },
+        ["Theldurin the Lost"] = {
+            ["Theldurin the Lost was once a member of our order, the Twilight's Hammer. But he to us, you must find the scroll. And to do that, you must find Theldurin."] = 687,
+        },
         ["This Is Going to Be Hard"] = {
             ["Haha! Done! The shackles are done!$B$BIt's time, Lucien. It's time, Servo!$B$BAre you ready to bear summon forth a powerful elemental now. This is a groundbreaking day for all of us."] = 778,
             ["Okay, here you go.$B$BI'm going to be over here... behind cover.$B$BFeel free to join me. Okay, here you go.$B$BI'm going to be over here... behind cover.$B$BFeel free to join me."] = 777,
@@ -1372,6 +1682,9 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["It will take more than a simple summoning circle to bring forth a felhunter for the Undercity these days, but still knows more of ancient texts than any I know."] = 1801,
             ["This is one of the most interesting texts I have perused in the last few secret: You can find the rods on orcs of the Dragonmaw Clan in the Wetlands."] = 1805,
             ["Well, ah, it's hard to let it go. But you found it, and you have used by the orcs of the Dragonmaw clan in the Wetlands. I'd check their spellcasters!"] = 1804,
+        },
+        ["Torwa Pathfinder"] = {
+            ["A hunter by the name of Torwa Pathfinder has requested the help of a druid. desert of Tanaris. As that road enters the crater, you will find Torwa close by."] = 9063,
         },
         ["Touch of Weakness"] = {
             ["Aelthalyste sent word out to all her priests. We're to direct the younger of our should return there also.$B$BYou can find Aelthalyste in the War Quarter deep in the Undercity."] = 5663,
@@ -1404,12 +1717,29 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["At an impasse of sorts, you know that you will need the book translated into is the Kargath outpost in the Badlands. Perhaps that is a good place to start."] = 2318,
             ["Droffers and Son Salvage aren't smart enough to restore the magic in the necklace, but to.$B$BIt's a simple deal, and no one else will be the wiser. Whatcha wanna do?"] = 2338,
         },
+        ["Tremors of the Earth"] = {
+            ["I heard from Sigrun that you have been a great help to him. Perhaps I Earth; I must have it. Bring it to me, and I will tell you more."] = 732,
+            ["It has become obvious that we cannot ensure that Blacklash and Hematus will remain imprisoned be used to break the seal which imprisons them.$B$B$N... assure that their dreams are eternal."] = 717,
+        },
         ["Triage"] = {
             ["Good day, doctor. You will be tested on your ability to triage patients accordingly this fail should 6 of your patients die in triage.$B$BTriage bandages will be supplied.$B$BGood luck, doctor."] = 6622,
             ["Good day, doctor. You will be tested on your ability to triage patients accordingly this this exam. You will fail should 6 of your patients die in triage.$B$BGood luck, doctor."] = 6624,
         },
+        ["Trial of the Lake"] = {
+            ["For your first trial, search the depths of Lake Elune'ara to locate a Shrine Bauble. for baubles themselves. Mental and physical dexterity will be critical to your success.$B$BGood luck, $N."] = 0,
+        },
+        ["Trial of the Sea Lion"] = {
+            ["For the second trial, you'll need the two halves that make the Pendant of the bring both here to join them together. Once formed, take the pendant to Dendrite Starblaze."] = 0,
+        },
         ["Tribal Leatherworking"] = {
             ["To learn tribal leatherworking demands an understanding of how primal nature truly is; I know the finest samples of your wild leather armor. From there, we will begin your mastery."] = 0,
+        },
+        ["Trol'kalar"] = {
+            ["The light slowly fades, the sword Trol'kalar, held within a stone sheath has been released. The light slowly fades, the sword Trol'kalar, held within a stone sheath has been released."] = 646,
+            ["What's this? With the four sigils brought together, they have formed together to create one Trollbane's tomb.$B$BTrollbane's remains are entombed in the Sanctum behind the chapel in Stromgarde. Retrieve Trol'kalar."] = 645,
+        },
+        ["Troll Necklace Bounty"] = {
+            ["Get this straight, $R - we are NOT part of the Alliance! The Wildhammers are me, and we'll mark it down as a step in the right direction for you."] = 2880,
         },
         ["Uldaman Reagent Run"] = {
             ["I've heard about a newly discovered plant called the magenta fungus caps. They grow in and I'll whip up a batch of one of my famous restorative elixirs for you!"] = 0,
@@ -1423,6 +1753,9 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["My real mission was to weaken the Scarlet Crusade's outlying forces and then infiltrate Hearthglen them, and we're making progress. They should be along Hearthglen Pass outside the town proper."] = 6023,
             ["What? Really? You want to know more? But you've already done so much for me, there you can gauge their numbers and report them back to me. But be careful...."] = 6025,
         },
+        ["Ursius of the Shardtooth"] = {
+            ["In the snowy mountains of Winterspring, to the northwest, a skilled hunter stalks his prey... quickly found themselves to be the prey, and he, the hunter. Stay on your guard."] = 5054,
+        },
         ["Vahlarriel's Search"] = {
             ["As you continue your search of the wagon you find not only a pendant, but the pendant you've found, but also know about the signs of life to the south."] = 1465,
             ["Find both Dalinda and Tyranis if you can and come back to me with your found and brought back safely. Tyranis is to be... gauged before he is taken home."] = 1438,
@@ -1432,17 +1765,30 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["Beyond this tunnel you will find a field of strife and turmoil, young $c. The a talisman of merit. Bring me such a talisman, $N, and I shall reward you."] = 0,
             ["Beyond this tunnel you will find a field of strife and turmoil, young $c. The earn a Mark of Honor. Bring it to me, $N, and I shall reward you."] = 8291,
         },
+        ["Veteran Uzzek"] = {
+            ["The Horde honors its warriors because their strength is unquestioned. But the truly great warriors of Far Watch Post, the orc garrison on the border of the Barrens and Durotar."] = 1505,
+        },
         ["Vile Familiars"] = {
             ["I trust the Valley of Trials will teach you much, young $C.$B$BI was sent to I bid you, defeat these familiars. Slay many and, if you survive, return to me."] = 792,
             ["Those warlocks who came before us have earned the distrust of the Horde, and while summoning, bring me six heads of the vile familiars from the cave to the northeast."] = 1485,
             ["Zureetha has been sending novices like yourself to help cull the numbers of the creatures her that you assisted with the imp problem, she'll probably have a reward for you."] = 1499,
         },
+        ["Vodouisant's Vigilant Embrace"] = {
+            ["Zanza can create the ancient troll enchantments with the right components. $B$BThe first is a the piles of refuse that litter this foul place. Look inside the jinxed hoodoo piles."] = 8188,
+        },
         ["Vyletongue Corruption"] = {
             ["A satyr known as Vyletongue has corrupted the caverns of Maraudon, stunting the growth of but do know that Vyletongue will still control it. He may use it against you..."] = 0,
+        },
+        ["Vyrin's Revenge"] = {
+            ["I don't suppose you'd be interested in a little payback for His Boldness? Daryl does once.$B$BThe bear, Ol' Sooty, can be found around his lair in the hills over Thelsamar."] = 271,
+            ["Light! Don't bring things like that into the Lodge... it's unsanitary, unspeakable, un... un... unsanitary!$B$BJust out of here, will you? No one wants to see your bloody little trophy, really!"] = 531,
         },
         ["Washed Ashore"] = {
             ["Majestic sea creatures are known to launch themselves at the Darkshore coastline, beached there until Greymist murlocs. Could you go there and retrieve bones from the creature for our study?"] = 3524,
             ["That beached creature is not an isolated incident here in Darkshore. There are more along By all means, if you should discover anything then please bring it to our attention!"] = 4681,
+        },
+        ["Water Pouch Bounty"] = {
+            ["Greetings $N - the name's Luglunket, and we've got an important job for you if package for every five you turn in. Most importantly though, you're helping Gadgetzan help itself!"] = 1707,
         },
         ["Westfall Stew"] = {
             ["Help me make some Westfall Stew! Come back with the following ingredients:$B$B3 Stringy Vulture Meat$B3 Stew! Come back with the following ingredients:$B$B3 Stringy Vulture Meat$B3 Goretusk Snouts$B3 Murloc Eyes$B3 Okra"] = 38,
@@ -1494,6 +1840,13 @@ AI_VoiceOverData_Vanilla.OctoQuestTextLookup = {
             ["Here you go, $N. Bring this message to Master Carevin.$B$B$B$BA few more like you, and Night Watch! Perhaps then we could complete the work that we few carry on today."] = 223,
             ["You might have noticed some larger worgen wandering around with the Shadow Weavers in the town. These worgen are a bit tougher than the last you faced.$B$BBe on your guard."] = 221,
             ["Your previous accomplishments have convinced me that you are ready to take on the toughest mine to the south.$B$BFrom far away you can even see the light from their bonfires..."] = 222,
+        },
+        ["Yorus Barleybrew"] = {
+            ["Yorus Barleybrew has issued a challenge to all able warriors of the Alliance. He waits Inn, in Redridge, and pledges a grand reward to anyone able to pass his trial."] = 1698,
+        },
+        ["You're a Mean One..."] = {
+            ["A c-c-creature called 'The Abominable Greench' is the one w-w-who stole our shipment of t-t-treats, them b-b-back to Smokywood Pastures in Ironforge, and t-t-tell them I n-n-need to be unfrozen!"] = 7043,
+            ["A c-c-creature called 'The Abominable Greench' is the one w-w-who stole our shipment of t-t-treats, them b-b-back to Smokywood Pastures in Orgrimmar, and t-t-tell them I n-n-need to be unfrozen!"] = 6983,
         },
     },
 }

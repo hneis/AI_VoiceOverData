@@ -8,6 +8,12 @@ const { dataTable, oggMetadata } = require("../tools/lib/catquest");
 const { compareTexts, jaccard } = require("../tools/audit_catquest_coverage");
 const { safeArchiveEntries } = require("../tools/prepare_catquest_update");
 const { compareVersions, fileVersion, isNewer, latestFile } = require("../tools/check_catquest_update");
+const {
+    buildLookupData,
+    normalizeTitle,
+    renderCatQuestLookup,
+    renderTextLookup,
+} = require("../tools/build_octowow_quest_text_lookup");
 
 assert.strictEqual(compareVersions("0.7.0", "0.6.1") > 0, true);
 assert.strictEqual(compareVersions("0.7.0", "0.7.0"), 0);
@@ -65,6 +71,27 @@ try {
     assert.strictEqual(parsed[2].c.x[0][2], "Текст");
     fs.writeFileSync(lua, "CatQuestVoicePack.quests = { [2] = os.execute(\"bad\") }\n");
     assert.throws(() => dataTable(lua, "CatQuestVoicePack.quests"), /Unsupported Lua data expression/);
+
+    const locales = path.join(temporary, "locales.json");
+    const base = path.join(temporary, "quest_id_lookups.lua");
+    const catquest = path.join(temporary, "catquest_audio.lua");
+    fs.writeFileSync(locales, JSON.stringify({ quests: {
+        1: { T: "Existing", D: "existing description" },
+        2: { T: "Wanted:  \"Quoted\"", D: "quoted description" },
+        3: { T: "Shared", D: "first shared description" },
+        4: { T: "Shared", D: "second shared description" },
+    } }));
+    fs.writeFileSync(base, "AI_VoiceOverData_Vanilla.QuestIDLookup = { accept = { Existing = 1, Shared = 4 } }\n");
+    fs.writeFileSync(catquest, "AI_VoiceOverData_Vanilla.CatQuestData = { Entries = { [\"2-accept\"] = { 1, \"2.ogg\" }, [\"3-accept\"] = { 1, \"3.ogg\" } } }\n");
+    const generated = buildLookupData(locales, base, catquest, "fixture");
+    assert.strictEqual(normalizeTitle("Wanted:  \"Quoted\""), "Wanted:  'Quoted'");
+    assert.strictEqual(generated.overrides.get("Wanted:  'Quoted'"), 2);
+    assert.deepStrictEqual(generated.overrides.get("Shared"), {});
+    assert(generated.reachableIDs.has(2));
+    assert(generated.reachableIDs.has(3));
+    const regenerated = buildLookupData(locales, base, catquest, "fixture");
+    assert.strictEqual(renderCatQuestLookup(generated), renderCatQuestLookup(regenerated));
+    assert.strictEqual(renderTextLookup(generated), renderTextLookup(regenerated));
 } finally {
     fs.rmSync(temporary, { recursive: true, force: true });
 }
