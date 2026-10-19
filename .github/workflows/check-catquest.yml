@@ -70,7 +70,7 @@ jobs:
           EOF
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "docs/candidates/catquest-${FILE_ID}.md"
+          git add --sparse "docs/candidates/catquest-${FILE_ID}.md"
           git commit -m "Track CatQuest ${VERSION} audit candidate"
           git push --set-upstream origin "$branch"
           gh pr create --draft \
