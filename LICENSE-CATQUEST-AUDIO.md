@@ -1,10 +1,10 @@
 # CatQuest Audio License
 
-The selected recordings under `generated/sounds/catquest/quests/` originate from **CatQuest Voices 0.7.0** by Cathey (daniilcathey):
+The selected recordings under `generated/sounds/catquest/quests/` originate from **CatQuest Voices 0.7.1** by Cathey (daniilcathey):
 
 - https://www.curseforge.com/wow/addons/catquest-voices
-- CurseForge file ID `9152956`
-- archive SHA-256 `4f52c422fb5a0a90050c1ec9e70f2e0a3267fdf87c065b6053fde8ad33d69680`
+- CurseForge file ID `9233762`
+- archive SHA-256 `c50420a3dc748df10773da6fb1bf136aef056c5e2bdb6093008b19da1c2963a1`
 
 The upstream project states that the speech was synthesized with ElevenLabs Eleven v4 and is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 

@@ -1,31 +1,31 @@
 {
-  "addonVersion": "1.1.1",
+  "addonVersion": "1.1.2",
   "catquest": {
-    "version": "0.7.0",
+    "version": "0.7.1",
     "curseForgeProjectId": 1715207,
-    "curseForgeFileId": 9152956,
-    "archiveSha256": "4f52c422fb5a0a90050c1ec9e70f2e0a3267fdf87c065b6053fde8ad33d69680",
-    "coverageSha256": "dbac247671ed6b13e6bb43d31ebaf6f0af3e97267a273fb85d5a3026539516e8",
-    "audioManifestSha256": "db83a3d00c029bcce0b8237d31b49cae7cd38bd15614a6ba2e861e0b4fd03b51",
-    "generatedDataSha256": "838ac9504bed12b0d63399e09543d3557d4f402483191a80fabd0e8f8c0773fd",
-    "generatedChecksumsSha256": "c44e00c277dda620aeefa7a69e172b83867c3fcd67ae6c7895a9b3f2144a6ddf",
+    "curseForgeFileId": 9233762,
+    "archiveSha256": "c50420a3dc748df10773da6fb1bf136aef056c5e2bdb6093008b19da1c2963a1",
+    "coverageSha256": "d04f5a17b19f8ff494899c7601efdff58a0f2d2954ebf17efd9ff442d92ef0a3",
+    "audioManifestSha256": "c88918c0c75206e867999550a95dd4639720c554a50decaaab6c76b47195970c",
+    "generatedDataSha256": "324dcca886b7014f1e97b1e6d565bac5ab96d1a1be64b89838d7dbe4dcade73d",
+    "generatedChecksumsSha256": "c9ae91c87f2bf2957a179f581eaff54db482015c2761d18e3b9b439c76f0a46a",
     "auditMode": "prior-sections-only-with-octo-overrides-excluded",
     "previousCoverageSha256": "671ff29f1025e78057634be1824e5780ef5603f887844b91fe9ba4b60de441b3",
     "octoQuestDatabaseRevision": "da341873737e0b11079ccadb90a40e82514d6367",
     "classicRuRevision": "93f8aabbde2a7328a1f27f86539393471ed32b6c",
     "classicRuSha256": "0c0b2e4a3a7edf1e37a4658a4758fb76537905ac2c05ce96b26373d50a655f22",
-    "referenceManifestSha256": "84a7ca12459c5e86d2b8a1c75fc74ca81cf4d552e0a54d465ed7243fce32581e",
-    "upstreamFiles": 11974,
-    "selectedBytes": 428615131,
-    "questIds": 1992,
-    "sections": 3036,
-    "files": 3707,
+    "referenceManifestSha256": "f040c0028419f9f81c3d1cbc9c0fa75b5999c31600ebac6290f86783093ec8c3",
+    "upstreamFiles": 11835,
+    "selectedBytes": 429634696,
+    "questIds": 1991,
+    "sections": 3035,
+    "files": 3704,
     "questLookup": {
-      "selectedAccepts": 1828,
-      "reachableAccepts": 1736,
+      "selectedAccepts": 1830,
+      "reachableAccepts": 1738,
       "blockedAccepts": 92,
-      "addedTitles": 417,
-      "addedDirect": 173,
+      "addedTitles": 415,
+      "addedDirect": 171,
       "addedAmbiguous": 244
     }
   },
@@ -38,10 +38,10 @@
     "enFiles": 657
   },
   "finalRouting": {
-    "catquest": 3723,
-    "ru": 6879,
-    "en": 632,
-    "aliases": 18,
+    "catquest": 3718,
+    "ru": 6874,
+    "en": 634,
+    "aliases": 16,
     "missing": 0
   },
   "authoritativeTables": {
@@ -53,6 +53,6 @@
     "generated/sound_length_table.lua": "0c84a2b71f83cebfdfe7b00c0e4b449244936a221b56f19f4e39456cdaeb830c",
     "generated/sound_length_table_ru.lua": "2a67ecce178bb9ba8bcc8d0d245788bad49157342c4303b737ba297a032d1172",
     "generated/octo_quest_text_lookups.lua": "db5716c5b44ea9225389829b20964a1f2098b98fda0c9ca3513ebe059fe28a8e",
-    "generated/catquest_quest_id_lookups.lua": "8e7ec6165368fc6a4ec5a19ccdf0494321a56f7785c8754eaf5a7066852b8fc6"
+    "generated/catquest_quest_id_lookups.lua": "634ec6af28bf550d3d0caf11ef95cf3b998a14a3903e9ba51aabaf0f7d46121c"
   }
 }

@@ -1,6 +1,6 @@
 # Coverage Snapshot
 
-Audit date: 2026-10-15.
+Audit date: 2026-10-19.
 
 OctoQuestDatabase revision: `da341873737e0b11079ccadb90a40e82514d6367`.
 
@@ -10,9 +10,9 @@ OctoQuestDatabase revision: `da341873737e0b11079ccadb90a40e82514d6367`.
 | --- | ---: | ---: |
 | Current EN | 3 640 | 2 690 |
 | Current RU | 3 582 | 2 409 |
-| CatQuest 0.7.0 full source | 4 101 | 3 335 |
-| Audited CatQuest selection | 1 992 | 1 044 |
-| EN + audited CatQuest | 3 816 | 2 989 |
+| CatQuest 0.7.1 full source | 4 101 | 3 335 |
+| Audited CatQuest selection | 1 991 | 1 044 |
+| EN + audited CatQuest | 3 814 | 2 986 |
 
 OctoQuestDatabase contains 6 704 effective quest IDs. The full CatQuest source has 7 436 accept/complete sections associated with those IDs; only the text-compatible selection is packaged.
 
@@ -22,15 +22,15 @@ From 7 436 CatQuest sections associated with Octo IDs:
 
 | Status | Sections |
 | --- | ---: |
-| Russian baseline match | 3 036 |
-| Close, manual review required | 252 |
-| Different | 672 |
+| Russian baseline match | 3 035 |
+| Close, manual review required | 249 |
+| Different | 676 |
 | Conditional class/race template | 422 |
 | Missing comparison text or transcript | 22 |
 | Prior Octo override unavailable | 140 |
 | Absent from previous audit | 2 892 |
 
-Only the 3 036 matching sections are included. They reference 3 707 physical OGG files across 1 992 quest IDs and occupy 408.8 MiB.
+Only the 3 035 matching sections are included. They reference 3 704 physical OGG files across 1 991 quest IDs and occupy 409.7 MiB.
 
 ## Base Hybrid Coverage
 
@@ -48,10 +48,10 @@ Final CatQuest/RU/EN routing:
 
 | Route | Lookup keys |
 | --- | ---: |
-| CatQuest | 3 723 |
-| Existing RU | 6 879 |
-| EN fallback | 632 |
-| Neutral aliases | 18 |
+| CatQuest | 3 718 |
+| Existing RU | 6 874 |
+| EN fallback | 634 |
+| Neutral aliases | 16 |
 | Unavailable | 0 |
 
 ## Limitations
@@ -66,4 +66,4 @@ Final CatQuest/RU/EN routing:
 
 The current Octo text resolver contains 406 ambiguous titles, 937 unique accept-text routes and 92 indistinguishable compacted texts that are safely blocked when the NPC name is unavailable. Exact NPC matches still take priority.
 
-Version 1.1.1 overlays 417 title routes required by selected CatQuest accepts: 173 unique titles map directly to an ID and 244 ambiguous titles replace legacy NPC mappings and use the current text resolver. Of 1 828 selected CatQuest accept IDs, 1 736 are safely reachable from the Vanilla quest log and 92 remain blocked because neither title nor text distinguishes them reliably.
+The current package overlays 415 title routes required by selected CatQuest accepts: 171 unique titles map directly to an ID and 244 ambiguous titles replace legacy NPC mappings and use the current text resolver. Of 1 830 selected CatQuest accept IDs, 1 738 are safely reachable from the Vanilla quest log and 92 remain blocked because neither title nor text distinguishes them reliably.
