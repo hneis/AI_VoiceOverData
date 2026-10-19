@@ -2,27 +2,27 @@
 
 ## Current Snapshot
 
-The current import was audited on 2026-10-15.
+The current import was audited on 2026-10-19.
 
 | Field | Value |
 | --- | --- |
-| CatQuest Voices | 0.7.0 |
+| CatQuest Voices | 0.7.1 |
 | CurseForge project | 1715207 |
-| CurseForge file | 9152956 |
-| ZIP SHA-256 | `4f52c422fb5a0a90050c1ec9e70f2e0a3267fdf87c065b6053fde8ad33d69680` |
-| Coverage CSV SHA-256 | `dbac247671ed6b13e6bb43d31ebaf6f0af3e97267a273fb85d5a3026539516e8` |
-| Audio manifest SHA-256 | `db83a3d00c029bcce0b8237d31b49cae7cd38bd15614a6ba2e861e0b4fd03b51` |
-| Generated data SHA-256 | `838ac9504bed12b0d63399e09543d3557d4f402483191a80fabd0e8f8c0773fd` |
-| Generated checksums SHA-256 | `c44e00c277dda620aeefa7a69e172b83867c3fcd67ae6c7895a9b3f2144a6ddf` |
-| Upstream OGG files | 11 974 |
-| Selected OGG files | 3 707 |
-| Selected quest IDs | 1 992 |
-| Selected sections | 3 036 |
-| Selected size | 408.8 MiB |
+| CurseForge file | 9233762 |
+| ZIP SHA-256 | `c50420a3dc748df10773da6fb1bf136aef056c5e2bdb6093008b19da1c2963a1` |
+| Coverage CSV SHA-256 | `d04f5a17b19f8ff494899c7601efdff58a0f2d2954ebf17efd9ff442d92ef0a3` |
+| Audio manifest SHA-256 | `c88918c0c75206e867999550a95dd4639720c554a50decaaab6c76b47195970c` |
+| Generated data SHA-256 | `324dcca886b7014f1e97b1e6d565bac5ab96d1a1be64b89838d7dbe4dcade73d` |
+| Generated checksums SHA-256 | `c9ae91c87f2bf2957a179f581eaff54db482015c2761d18e3b9b439c76f0a46a` |
+| Upstream OGG files | 11 835 |
+| Selected OGG files | 3 704 |
+| Selected quest IDs | 1 991 |
+| Selected sections | 3 035 |
+| Selected size | 409.7 MiB |
 
 All upstream OGG files were checked as complete Vorbis streams and matched the audited size, duration and SHA-256 manifest. Only the selected files are stored in this addon.
 
-The 0.7.0 audit used OctoQuestDatabase revision `da341873737e0b11079ccadb90a40e82514d6367` and `classicdb_ruRU` revision `93f8aabbde2a7328a1f27f86539393471ed32b6c`. The former RU OctoMeow source was no longer available, so 140 sections identified as Octo overrides and 2 892 sections absent from the previous audit were conservatively excluded. They continue through RU/EN fallback instead of being approved against incomplete evidence.
+The 0.7.1 audit used OctoQuestDatabase revision `da341873737e0b11079ccadb90a40e82514d6367` and `classicdb_ruRU` revision `93f8aabbde2a7328a1f27f86539393471ed32b6c`. The former RU OctoMeow source was no longer available, so 140 sections identified as Octo overrides and 2 892 sections absent from the previous audit were conservatively excluded. They continue through RU/EN fallback instead of being approved against incomplete evidence.
 
 ## Selection Policy
 
@@ -52,7 +52,7 @@ The end-to-end local command downloads or resumes the official archive, validate
 
 ```bash
 npm run catquest:prepare -- \
-  --file-id 9152956 \
+  --file-id 9233762 \
   --work-dir /path/outside/the/repository/catquest-work \
   --octo-revision da341873737e0b11079ccadb90a40e82514d6367 \
   --classic-revision 93f8aabbde2a7328a1f27f86539393471ed32b6c \
